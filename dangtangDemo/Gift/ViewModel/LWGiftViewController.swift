@@ -14,22 +14,25 @@ class LWGiftViewController: LWViewControllerBase {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = nil
         // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+        
+        let giftData = LWGiftData()
+        let info = LWUserInfoModel.sharedInstance().getUserInfo()
+        
+        giftData.gender = info.sex
+        giftData.generation = 1
+        giftData.limit = 2
+        giftData.offset = 0
+        let dict = LWNetWorkingTool<LWGiftData>.getDictinoary(model: giftData)
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        LWNetWorkingTool<LWGiftRequestData>.getDataFromeServiceRequest(url: LWGiftDataUrl, params: dict , successBlock:
+            { jsonModel in
+           
+                    print("first: \(jsonModel)")
+                
+                    }) { (error) in
+                
+                    }
+        
     }
-    */
 
 }

@@ -26,7 +26,13 @@ extension LWTabBarControllerBase {
         VCArrays.append(LWHomeNavigationController(rootViewController : createVC(imageName: "TabBar_home", tilteName: "单糖", vc: "LWHomeViewController")))
         VCArrays.append(LWGiftNavigationController(rootViewController : createVC(imageName: "TabBar_gift", tilteName: "单品", vc: "LWGiftViewController")))
         VCArrays.append(LWCategoryNavigationController(rootViewController : createVC(imageName: "TabBar_category", tilteName: "分类", vc: "LWCategoryViewController")))
-        VCArrays.append(LWMeNavigationController(rootViewController : createVC(imageName: "TabBar_me_boy", tilteName: "我", vc: "LWMeViewController")))
+        let info = LWUserInfoModel.sharedInstance().getUserInfo()
+        if info.sex == 1 {
+            VCArrays.append(LWMeNavigationController(rootViewController : createVC(imageName: "TabBar_me_boy", tilteName: "我", vc: "LWMeViewController")))
+        }
+        else {
+            VCArrays.append(LWMeNavigationController(rootViewController : createVC(imageName: "TabBar_me_girl", tilteName: "我", vc: "LWMeViewController")))
+        }
         viewControllers = VCArrays
     }
     func createVC(imageName : String,tilteName : String,vc : String) -> UIViewController {

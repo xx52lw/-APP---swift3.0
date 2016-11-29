@@ -31,6 +31,8 @@
 		D087BFF21DE4995F00C992A9 /* LWCategoryNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFF11DE4995F00C992A9 /* LWCategoryNavigationController.swift */; };
 		D087BFF41DE4996B00C992A9 /* LWMeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFF31DE4996B00C992A9 /* LWMeNavigationController.swift */; };
 		D087BFF61DE49DFF00C992A9 /* Bundle+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFF51DE49DFF00C992A9 /* Bundle+Extension.swift */; };
+		D08E07EF1DEDC0DF00347AA9 /* LWGiftData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E07EE1DEDC0DF00347AA9 /* LWGiftData.swift */; };
+		D08E07F11DEDE05E00347AA9 /* LWGiftCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E07F01DEDE05E00347AA9 /* LWGiftCollectionViewCell.swift */; };
 		D0993D101DE87F3F0061E11A /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0993D0F1DE87F3F0061E11A /* Asset.xcassets */; };
 		D0C1BC9B1DEB169200CAAA84 /* LWSelectSexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1BC9A1DEB169200CAAA84 /* LWSelectSexView.swift */; };
 		D0C1BC9D1DEB1AD000CAAA84 /* LWSelectProfessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1BC9C1DEB1AD000CAAA84 /* LWSelectProfessionView.swift */; };
@@ -71,6 +73,8 @@
 		D087BFF11DE4995F00C992A9 /* LWCategoryNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryNavigationController.swift; sourceTree = "<group>"; };
 		D087BFF31DE4996B00C992A9 /* LWMeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeNavigationController.swift; sourceTree = "<group>"; };
 		D087BFF51DE49DFF00C992A9 /* Bundle+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bundle+Extension.swift"; sourceTree = "<group>"; };
+		D08E07EE1DEDC0DF00347AA9 /* LWGiftData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWGiftData.swift; sourceTree = "<group>"; };
+		D08E07F01DEDE05E00347AA9 /* LWGiftCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWGiftCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0993D0F1DE87F3F0061E11A /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		D0C1BC9A1DEB169200CAAA84 /* LWSelectSexView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWSelectSexView.swift; sourceTree = "<group>"; };
 		D0C1BC9C1DEB1AD000CAAA84 /* LWSelectProfessionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWSelectProfessionView.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				D00FD10B1DE9298300AD9607 /* LWUserInfoModel.swift */,
+				D08E07EE1DEDC0DF00347AA9 /* LWGiftData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 		D087BFD91DE497C700C992A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D08E07F01DEDE05E00347AA9 /* LWGiftCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -505,10 +511,12 @@
 				D00FD1101DE9325300AD9607 /* LWSelectInfoViewController.swift in Sources */,
 				D087BFF41DE4996B00C992A9 /* LWMeNavigationController.swift in Sources */,
 				D087BFC41DE483AB00C992A9 /* LWServiceBase.swift in Sources */,
+				D08E07EF1DEDC0DF00347AA9 /* LWGiftData.swift in Sources */,
 				D087BFC81DE4841D00C992A9 /* LWNavigationControllerBase.swift in Sources */,
 				D087BFEE1DE498D200C992A9 /* LWHomeNavigationController.swift in Sources */,
 				D0C1BC9B1DEB169200CAAA84 /* LWSelectSexView.swift in Sources */,
 				D087BFD01DE4935D00C992A9 /* UIImage+Extension.swift in Sources */,
+				D08E07F11DEDE05E00347AA9 /* LWGiftCollectionViewCell.swift in Sources */,
 				D0FCE42D1DE5E82100E699C7 /* LWConstant.swift in Sources */,
 				D087BFEA1DE4986B00C992A9 /* LWCategoryViewController.swift in Sources */,
 				D03BD9641DE88B1A006552A4 /* LWNewFeatureViewController.swift in Sources */,

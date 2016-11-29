@@ -9,6 +9,8 @@
 import UIKit
 import HandyJSON
 class LWServiceBase: HandyJSON {
+    var code : Int?
+    var message : String?
     required init() {
         
     }
