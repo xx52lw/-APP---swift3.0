@@ -12,7 +12,7 @@ class LWGiftViewController: LWViewControllerBase {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        navigationItem.leftBarButtonItem = nil
         // Do any additional setup after loading the view.
     }
 

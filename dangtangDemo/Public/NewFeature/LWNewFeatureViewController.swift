@@ -54,7 +54,7 @@ extension LWNewFeatureViewController {
     func inputBtnClick(){
        let info = LWUserInfoModel.sharedInstance().getUserInfo()
         UserDefaults.standard.set(Bundle.main.version, forKey: LWSystemVersionKey)
-        if info.sex == 0 {
+        if info.profession == 0 {
             navigationController?.present(LWSelectInfoViewController(), animated: true, completion: {
                 
             })

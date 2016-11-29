@@ -27,7 +27,7 @@ extension LWCategoryViewController {
         
         let searchImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_search")
         navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(searchImage, target: self, action: #selector(rightSearchClick), for: UIControlEvents.touchUpInside))
-        
+        navigationItem.leftBarButtonItem = nil
     }
     func rightSearchClick() {
         print("rightSearchClick")

@@ -43,5 +43,16 @@ class LWNetWorkingTool<T:HandyJSON >: NSObject {
 //    }) { (error) in
 //    
 //    }
-    
+    class func getDictinoary(model : HandyJSON) -> Dictionary<String, Any>?{
+        guard let dict = JSONSerializer.serialize(model: model).toSimpleDictionary() else {
+            return  Dictionary()
+        }
+        return dict
+    }
+    class func getModel(dict : Dictionary<String, Any>) -> T {
+        guard let model = JSONDeserializer<T>.deserializeFrom(dict: dict as NSDictionary?) else {
+            return T()
+        }
+        return model
+    }
 }

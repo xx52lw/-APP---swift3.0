@@ -18,6 +18,7 @@ class LWViewControllerBase: UIViewController {
         
             let bgBtnImage = UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_backward")
             self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(bgBtnImage, target: self, action: #selector(backClick), for: UIControlEvents.touchUpInside))
+        
 //        }
         // Do any additional setup after loading the view.
     }

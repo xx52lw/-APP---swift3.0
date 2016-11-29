@@ -64,7 +64,7 @@ extension AppDelegate {
     func selectShowViewController() {
         let oldVersion = UserDefaults.standard.string(forKey: LWSystemVersionKey)
         let currentVersion = Bundle.main.version
-        if  oldVersion == nil || oldVersion?.compare(currentVersion) != .orderedAscending  {
+        if  oldVersion == nil || oldVersion?.compare(currentVersion) == .orderedAscending  {
             window?.rootViewController = UINavigationController(rootViewController : LWNewFeatureViewController())
         }
         else {
