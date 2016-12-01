@@ -7,14 +7,26 @@
 //
 
 import UIKit
-
 class LWGiftViewController: LWViewControllerBase {
 
     /// cell的尺寸
     var cellSize : CGSize?
     /// cell的数组
     var cellArray = [LWGiftRequestDataModel]()
-
+    
+    lazy var refreshHeader: MJRefreshNormalHeader = {
+        let header = MJRefreshNormalHeader(refreshingTarget:self ,refreshingAction:#selector(loadNew))
+        header?.stateLabel.isHidden = true
+        header?.beginRefreshing(completionBlock: { 
+             print("")
+        })
+        return header!
+    }()
+    lazy var refreshFooter: MJRefreshBackNormalFooter = {
+        let Footer = MJRefreshBackNormalFooter(refreshingTarget:self ,refreshingAction:#selector(loadMore))
+        Footer?.stateLabel.isHidden = true
+        return Footer!
+    }()
     /// 布局
     lazy var collectionView : UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -27,7 +39,7 @@ class LWGiftViewController: LWViewControllerBase {
         collectview.showsVerticalScrollIndicator = true
         collectview.delegate = self
         collectview.dataSource = self
-        collectview.contentInset = UIEdgeInsets.init(top: 5, left: 5, bottom:0, right: 5)
+//        collectview.contentInset = UIEdgeInsets.init(top: 5, left: 0, bottom:0, right: 0)
         return collectview
     }()
 
@@ -43,6 +55,14 @@ class LWGiftViewController: LWViewControllerBase {
 //        return CGSizeMake(width, height)
         view.addSubview(collectionView)
         
+      //        self.collectionView .addSubview(rh)
+        self.collectionView.mj_header = refreshHeader
+        self.collectionView.mj_footer = refreshFooter
+        
+    }
+    
+    func loadNew() {
+       print("")
         let giftData = LWGiftData()
         let info = LWUserInfoModel.sharedInstance().getUserInfo()
         
@@ -56,16 +76,21 @@ class LWGiftViewController: LWViewControllerBase {
             { jsonModel in
                 wself?.cellArray = (jsonModel?.items)!
                 wself?.collectionView.reloadData()
-                    print("first: \(jsonModel)")
+                print("first: \(jsonModel)")
+                self.refreshHeader.endRefreshing()
                 
-                    }) { (error) in
-                
-                    }
-        
+        }) { (error) in
+            
+        }
+
     }
-    
+    func loadMore() {
+        print("")
+        refreshFooter.endRefreshing()
+    }
     override func viewWillLayoutSubviews() {
          super.viewWillLayoutSubviews()
+//        collectionView.frame = CGRect.init(x: 5, y: 0, width: view.frame.size.width - 10, height: view.frame.size.height)
         collectionView.frame = view.bounds
     }
 
@@ -91,7 +116,7 @@ extension LWGiftViewController: UICollectionViewDataSource,UICollectionViewDeleg
         return CGSize.init(width: w, height: h)
     }
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsetsMake(5, 5, 5, 5)
+        return UIEdgeInsetsMake(10, 10, 0, 10)
     }
     // 设置元素样式
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
