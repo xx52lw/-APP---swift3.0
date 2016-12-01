@@ -14,6 +14,7 @@
 		D043F8791DD6CA9300D76760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043F8781DD6CA9300D76760 /* AppDelegate.swift */; };
 		D043F87E1DD6CA9300D76760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D043F87C1DD6CA9300D76760 /* Main.storyboard */; };
 		D043F8831DD6CA9300D76760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D043F8811DD6CA9300D76760 /* LaunchScreen.storyboard */; };
+		D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07F54791DEDEADB00CDD1CA /* LWImageTool.swift */; };
 		D087BFC21DE4839400C992A9 /* LWNetWorkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFC11DE4839400C992A9 /* LWNetWorkingTool.swift */; };
 		D087BFC41DE483AB00C992A9 /* LWServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFC31DE483AB00C992A9 /* LWServiceBase.swift */; };
 		D087BFC61DE483F500C992A9 /* LWViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFC51DE483F500C992A9 /* LWViewControllerBase.swift */; };
@@ -56,6 +57,7 @@
 		D043F87D1DD6CA9300D76760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D043F8821DD6CA9300D76760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D043F8841DD6CA9300D76760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		D07F54791DEDEADB00CDD1CA /* LWImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWImageTool.swift; sourceTree = "<group>"; };
 		D087BFC11DE4839400C992A9 /* LWNetWorkingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWNetWorkingTool.swift; sourceTree = "<group>"; };
 		D087BFC31DE483AB00C992A9 /* LWServiceBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWServiceBase.swift; sourceTree = "<group>"; };
 		D087BFC51DE483F500C992A9 /* LWViewControllerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWViewControllerBase.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 				D087BFC91DE4843700C992A9 /* LWTableViewControllerBase.swift */,
 				D087BFCB1DE48DC300C992A9 /* LWTabBarControllerBase.swift */,
 				D087BFCF1DE4935D00C992A9 /* UIImage+Extension.swift */,
+				D07F54791DEDEADB00CDD1CA /* LWImageTool.swift */,
 				D087BFF51DE49DFF00C992A9 /* Bundle+Extension.swift */,
 				D0FE110D1DE740C200804991 /* UIButton+Extension.swift */,
 				D0FCE42C1DE5E82100E699C7 /* LWConstant.swift */,
@@ -525,6 +528,7 @@
 				D087BFC61DE483F500C992A9 /* LWViewControllerBase.swift in Sources */,
 				D03BD9661DE88BEA006552A4 /* LWNewFeatureCollectionViewCell.swift in Sources */,
 				D00FD10C1DE9298300AD9607 /* LWUserInfoModel.swift in Sources */,
+				D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */,
 				D0FE110E1DE740C200804991 /* UIButton+Extension.swift in Sources */,
 				D0FE11101DE746DC00804991 /* LWSearchViewController.swift in Sources */,
 				D087BFE61DE4984500C992A9 /* LWHomeViewController.swift in Sources */,

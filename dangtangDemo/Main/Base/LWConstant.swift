@@ -40,12 +40,8 @@ return LWRGB(240, g: 240, b: 240)
 func LWGlobalRed() -> UIColor {
     return LWRGB(245, g: 80, b: 83)
 }
-
-
-
-
-
-
+/// 全局默认占位图片
+let LWGlobalPlaceHolderImage = UIImage.getImageFromeBundleFile(fileName: "comment", imageName: "PlaceHolderImage")
 
 
 

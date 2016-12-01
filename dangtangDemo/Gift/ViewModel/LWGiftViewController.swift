@@ -10,23 +10,52 @@ import UIKit
 
 class LWGiftViewController: LWViewControllerBase {
 
+    /// cell的尺寸
+    var cellSize : CGSize?
+    /// cell的数组
+    var cellArray = [LWGiftRequestDataModel]()
+
+    /// 布局
+    lazy var collectionView : UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 10 // 行间距
+        layout.minimumInteritemSpacing = 5 // 列间距
+        layout.scrollDirection = .vertical
+        let collectview = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
+        collectview.register(LWGiftCollectionViewCell.self, forCellWithReuseIdentifier: "LWGiftCollectionViewCell")
+        collectview.backgroundColor = UIColor.clear
+        collectview.showsVerticalScrollIndicator = true
+        collectview.delegate = self
+        collectview.dataSource = self
+        collectview.contentInset = UIEdgeInsets.init(top: 5, left: 5, bottom:0, right: 5)
+        return collectview
+    }()
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.leftBarButtonItem = nil
         // Do any additional setup after loading the view.
+        
+//        let width: CGFloat = (LWAppScreenWidth - 20) / 2
+//        let height: CGFloat = LWUITool.sizeWithStringFont(<#T##string: String##String#>, font: <#T##UIFont#>, maxSize: <#T##CGSize#>)
+//        return CGSizeMake(width, height)
+        view.addSubview(collectionView)
         
         let giftData = LWGiftData()
         let info = LWUserInfoModel.sharedInstance().getUserInfo()
         
         giftData.gender = info.sex
         giftData.generation = 1
-        giftData.limit = 2
+        giftData.limit = 20
         giftData.offset = 0
         let dict = LWNetWorkingTool<LWGiftData>.getDictinoary(model: giftData)
-    
+        weak var wself = self
         LWNetWorkingTool<LWGiftRequestData>.getDataFromeServiceRequest(url: LWGiftDataUrl, params: dict , successBlock:
             { jsonModel in
-           
+                wself?.cellArray = (jsonModel?.items)!
+                wself?.collectionView.reloadData()
                     print("first: \(jsonModel)")
                 
                     }) { (error) in
@@ -34,5 +63,48 @@ class LWGiftViewController: LWViewControllerBase {
                     }
         
     }
+    
+    override func viewWillLayoutSubviews() {
+         super.viewWillLayoutSubviews()
+        collectionView.frame = view.bounds
+    }
 
 }
+
+// =================================================================================================================================
+// MARK: - UICollectionView的代理和数据源方法
+extension LWGiftViewController: UICollectionViewDataSource,UICollectionViewDelegate,UICollectionViewDelegateFlowLayout {
+    // 分组个数
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    // 每组元素个数
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return cellArray.count
+    }
+    
+    // MARK: - UICollectionViewDelegateFlowLayout
+    // 每个cell的尺寸
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let w : CGFloat = (LWAppScreenWidth - 30) / 2
+        let h : CGFloat = w + 40 + 20 + 5
+        return CGSize.init(width: w, height: h)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsetsMake(5, 5, 5, 5)
+    }
+    // 设置元素样式
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "LWGiftCollectionViewCell", for: indexPath) as! LWGiftCollectionViewCell
+        cell.backgroundColor = UIColor.white
+        let dataModel = cellArray[indexPath.row] as LWGiftRequestDataModel
+        cell.dataInfo = dataModel.data!
+        cell.layoutViewSubviews()
+        cell.layer.cornerRadius = 2.0
+        cell.layer.masksToBounds = true
+        return cell
+    }
+}
+// =================================================================================================================================
+
+

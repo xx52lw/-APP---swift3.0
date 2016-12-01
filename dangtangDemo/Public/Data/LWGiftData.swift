@@ -52,6 +52,7 @@ class LWGiftRequestDataInfo: LWServiceBase {
     var brand_order : Int?
     var cover_image_url : String?
     var created_at : Int?
+    var description : String?
     var editor_id : Int?
     var favorites_count : Int?
     var id : Int?
