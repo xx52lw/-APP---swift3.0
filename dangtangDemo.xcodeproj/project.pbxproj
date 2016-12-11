@@ -9,6 +9,16 @@
 /* Begin PBXBuildFile section */
 		D00FD10C1DE9298300AD9607 /* LWUserInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00FD10B1DE9298300AD9607 /* LWUserInfoModel.swift */; };
 		D00FD1101DE9325300AD9607 /* LWSelectInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00FD10F1DE9325300AD9607 /* LWSelectInfoViewController.swift */; };
+		D02650711DFD6876009E9A78 /* LWHomeBannerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026506A1DFD6876009E9A78 /* LWHomeBannerCollectionViewCell.swift */; };
+		D02650721DFD6876009E9A78 /* LWHomeBannerTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026506B1DFD6876009E9A78 /* LWHomeBannerTableView.swift */; };
+		D02650731DFD6876009E9A78 /* LWHomeBannerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026506C1DFD6876009E9A78 /* LWHomeBannerView.swift */; };
+		D02650741DFD6876009E9A78 /* LWHomeChannelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026506D1DFD6876009E9A78 /* LWHomeChannelCell.swift */; };
+		D02650751DFD6876009E9A78 /* LWHomeChannelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026506E1DFD6876009E9A78 /* LWHomeChannelView.swift */; };
+		D02650761DFD6876009E9A78 /* LWHomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026506F1DFD6876009E9A78 /* LWHomeContentView.swift */; };
+		D02650771DFD6876009E9A78 /* LWHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02650701DFD6876009E9A78 /* LWHomeTableViewCell.swift */; };
+		D026507B1DFD68A4009E9A78 /* LWHomeBannerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02650781DFD68A4009E9A78 /* LWHomeBannerData.swift */; };
+		D026507C1DFD68A4009E9A78 /* LWHomeChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02650791DFD68A4009E9A78 /* LWHomeChannelData.swift */; };
+		D026507D1DFD68A4009E9A78 /* LWHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026507A1DFD68A4009E9A78 /* LWHomeData.swift */; };
 		D03BD9641DE88B1A006552A4 /* LWNewFeatureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BD9631DE88B1A006552A4 /* LWNewFeatureViewController.swift */; };
 		D03BD9661DE88BEA006552A4 /* LWNewFeatureCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03BD9651DE88BEA006552A4 /* LWNewFeatureCollectionViewCell.swift */; };
 		D043F8791DD6CA9300D76760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043F8781DD6CA9300D76760 /* AppDelegate.swift */; };
@@ -71,6 +81,16 @@
 		B6C13A52791E42CD8EE741D9 /* Pods-dangtangDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-dangtangDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-dangtangDemo/Pods-dangtangDemo.release.xcconfig"; sourceTree = "<group>"; };
 		D00FD10B1DE9298300AD9607 /* LWUserInfoModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWUserInfoModel.swift; sourceTree = "<group>"; };
 		D00FD10F1DE9325300AD9607 /* LWSelectInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWSelectInfoViewController.swift; sourceTree = "<group>"; };
+		D026506A1DFD6876009E9A78 /* LWHomeBannerCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeBannerCollectionViewCell.swift; sourceTree = "<group>"; };
+		D026506B1DFD6876009E9A78 /* LWHomeBannerTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeBannerTableView.swift; sourceTree = "<group>"; };
+		D026506C1DFD6876009E9A78 /* LWHomeBannerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeBannerView.swift; sourceTree = "<group>"; };
+		D026506D1DFD6876009E9A78 /* LWHomeChannelCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeChannelCell.swift; sourceTree = "<group>"; };
+		D026506E1DFD6876009E9A78 /* LWHomeChannelView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeChannelView.swift; sourceTree = "<group>"; };
+		D026506F1DFD6876009E9A78 /* LWHomeContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeContentView.swift; sourceTree = "<group>"; };
+		D02650701DFD6876009E9A78 /* LWHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTableViewCell.swift; sourceTree = "<group>"; };
+		D02650781DFD68A4009E9A78 /* LWHomeBannerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeBannerData.swift; sourceTree = "<group>"; };
+		D02650791DFD68A4009E9A78 /* LWHomeChannelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeChannelData.swift; sourceTree = "<group>"; };
+		D026507A1DFD68A4009E9A78 /* LWHomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeData.swift; sourceTree = "<group>"; };
 		D03BD9631DE88B1A006552A4 /* LWNewFeatureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWNewFeatureViewController.swift; sourceTree = "<group>"; };
 		D03BD9651DE88BEA006552A4 /* LWNewFeatureCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWNewFeatureCollectionViewCell.swift; sourceTree = "<group>"; };
 		D043F8751DD6CA9300D76760 /* dangtangDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = dangtangDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -371,6 +391,9 @@
 		D087BFDC1DE497C700C992A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D02650781DFD68A4009E9A78 /* LWHomeBannerData.swift */,
+				D02650791DFD68A4009E9A78 /* LWHomeChannelData.swift */,
+				D026507A1DFD68A4009E9A78 /* LWHomeData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -386,6 +409,13 @@
 		D087BFDE1DE497C700C992A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D026506A1DFD6876009E9A78 /* LWHomeBannerCollectionViewCell.swift */,
+				D026506B1DFD6876009E9A78 /* LWHomeBannerTableView.swift */,
+				D026506C1DFD6876009E9A78 /* LWHomeBannerView.swift */,
+				D026506D1DFD6876009E9A78 /* LWHomeChannelCell.swift */,
+				D026506E1DFD6876009E9A78 /* LWHomeChannelView.swift */,
+				D026506F1DFD6876009E9A78 /* LWHomeContentView.swift */,
+				D02650701DFD6876009E9A78 /* LWHomeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -672,6 +702,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D0C30C091DF0760200089CB1 /* UIScrollView+MJExtension.m in Sources */,
+				D026507D1DFD68A4009E9A78 /* LWHomeData.swift in Sources */,
 				D087BFCC1DE48DC300C992A9 /* LWTabBarControllerBase.swift in Sources */,
 				D0C30C041DF0760200089CB1 /* MJRefreshNormalHeader.m in Sources */,
 				D087BFF61DE49DFF00C992A9 /* Bundle+Extension.swift in Sources */,
@@ -684,6 +715,7 @@
 				D087BFC41DE483AB00C992A9 /* LWServiceBase.swift in Sources */,
 				D08E07EF1DEDC0DF00347AA9 /* LWGiftData.swift in Sources */,
 				D0C30BFB1DF0760200089CB1 /* MJRefreshFooter.m in Sources */,
+				D02650771DFD6876009E9A78 /* LWHomeTableViewCell.swift in Sources */,
 				D087BFC81DE4841D00C992A9 /* LWNavigationControllerBase.swift in Sources */,
 				D087BFEE1DE498D200C992A9 /* LWHomeNavigationController.swift in Sources */,
 				D0C30BFC1DF0760200089CB1 /* MJRefreshHeader.m in Sources */,
@@ -698,6 +730,7 @@
 				D03BD9641DE88B1A006552A4 /* LWNewFeatureViewController.swift in Sources */,
 				D087BFF01DE4994900C992A9 /* LWGiftNavigationController.swift in Sources */,
 				D0C30C001DF0760200089CB1 /* MJRefreshBackGifFooter.m in Sources */,
+				D02650741DFD6876009E9A78 /* LWHomeChannelCell.swift in Sources */,
 				D087BFC21DE4839400C992A9 /* LWNetWorkingTool.swift in Sources */,
 				D0C30BFD1DF0760200089CB1 /* MJRefreshAutoGifFooter.m in Sources */,
 				D0C30C031DF0760200089CB1 /* MJRefreshGifHeader.m in Sources */,
@@ -706,11 +739,16 @@
 				D03BD9661DE88BEA006552A4 /* LWNewFeatureCollectionViewCell.swift in Sources */,
 				D00FD10C1DE9298300AD9607 /* LWUserInfoModel.swift in Sources */,
 				D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */,
+				D02650731DFD6876009E9A78 /* LWHomeBannerView.swift in Sources */,
+				D02650751DFD6876009E9A78 /* LWHomeChannelView.swift in Sources */,
 				D0FE110E1DE740C200804991 /* UIButton+Extension.swift in Sources */,
 				D0C30BF91DF0760200089CB1 /* MJRefreshBackFooter.m in Sources */,
 				D0C30C051DF0760200089CB1 /* MJRefreshStateHeader.m in Sources */,
 				D0FE11101DE746DC00804991 /* LWSearchViewController.swift in Sources */,
+				D02650721DFD6876009E9A78 /* LWHomeBannerTableView.swift in Sources */,
 				D0C30C0B1DF0760200089CB1 /* UIView+MJExtension.m in Sources */,
+				D02650761DFD6876009E9A78 /* LWHomeContentView.swift in Sources */,
+				D02650711DFD6876009E9A78 /* LWHomeBannerCollectionViewCell.swift in Sources */,
 				D087BFE61DE4984500C992A9 /* LWHomeViewController.swift in Sources */,
 				D087BFE81DE4985900C992A9 /* LWGiftViewController.swift in Sources */,
 				D0C1BC9D1DEB1AD000CAAA84 /* LWSelectProfessionView.swift in Sources */,
@@ -719,8 +757,10 @@
 				D0C30BFF1DF0760200089CB1 /* MJRefreshAutoStateFooter.m in Sources */,
 				D0C30C0A1DF0760200089CB1 /* UIScrollView+MJRefresh.m in Sources */,
 				D0C30BF81DF0760200089CB1 /* MJRefreshAutoFooter.m in Sources */,
+				D026507B1DFD68A4009E9A78 /* LWHomeBannerData.swift in Sources */,
 				D0FE110C1DE73F2A00804991 /* LWUITool.swift in Sources */,
 				D087BFEC1DE4987900C992A9 /* LWMeViewController.swift in Sources */,
+				D026507C1DFD68A4009E9A78 /* LWHomeChannelData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

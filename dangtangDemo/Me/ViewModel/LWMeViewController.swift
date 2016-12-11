@@ -14,11 +14,13 @@ class LWMeViewController: LWViewControllerBase {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.navigationBar.isTranslucent = true
+        self.edgesForExtendedLayout = UIRectEdge.all
         setNavBar()
         let bgImage = UIImage.getImageFromeBundleFile(fileName: "me", imageName: "Me_ProfileBackground")
         let bgView = UIImageView.init(image: bgImage)
         let url =  "http://7fvaoh.com3.z0.glb.qiniucdn.com/image/150817/cq0a0htx5_w.jpg-w720"
-//        bgView.kf.setImage(with: url, placeholder: bgImage, options: nil, progressBlock: nil, completionHandler: nil)
+        //        bgView.kf.setImage(with: url, placeholder: bgImage, options: nil, progressBlock: nil, completionHandler: nil)
         view.addSubview(bgView)
         LWImageTool.imageUrlAndPlaceImage(imageView: bgView, stringUrl: url, placeholdImage: bgImage)
         
