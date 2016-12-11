@@ -60,22 +60,6 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dangtangDemo/Gift/ViewModel/LWGiftViewController.swift"
-            timestampString = "502302220.236857"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "80"
-            endingLineNumber = "80"
-            landmarkName = "loadNew()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "dangtangDemo/Gift/ViewModel/LWGiftViewController.swift"
             timestampString = "502302230.302487"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
