@@ -31,8 +31,11 @@ class LWHomeViewController: LWViewControllerBase {
         // Do any additional setup after loading the view.
         view.addSubview(channelView)
         view.addSubview(contenView)
+        NotificationCenter.default.addObserver(self, selector: #selector(homeChannlCompleteNotify), name: NSNotification.Name(rawValue: LWHomeChannlCompleteNotify), object: nil)
     }
-    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         var x : CGFloat = 0.0
@@ -64,6 +67,17 @@ extension LWHomeViewController {
     func rightSearchClick() {
         navigationController?.pushViewController(LWSearchViewController(), animated: true)
         print("rightSearchClick")
+    }
+    // MARK: 接收到频道数据加载完成的通知
+    func homeChannlCompleteNotify(notify: NSNotification){
+        print(notify.object)
+        guard let array : NSArray = notify.object as! NSArray? else {
+            return
+        }
+        if array.count <= 0 {
+            return
+        }
+        contenView.createShowView(viewArrays: array)
     }
 }
 // =================================================================================================================================

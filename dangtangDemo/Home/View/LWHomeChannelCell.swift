@@ -16,7 +16,7 @@ class LWHomeChannelCell: UICollectionViewCell {
         btn.titleLabel?.font = UIFont.systemFont(ofSize: 13)
         btn.setTitleColor(UIColor.black, for: UIControlState.normal)
         btn.setTitleColor(LWGlobalRed(), for: UIControlState.selected)
-        btn.isUserInteractionEnabled = false   // 这里需要设置，否侧cell点击有问题
+        btn.isUserInteractionEnabled = false   // 这里需要设置，cell点击有问题越过btn
         return btn
     }()
 //    // MARK: 懒加载简介标签

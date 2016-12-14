@@ -49,7 +49,7 @@ class LWHomeChannelView: UIView {
         //        collectview.contentInset = UIEdgeInsets.init(top: 5, left: 0, bottom:0, right: 0)
         return collectview
     }()
-
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(collectionView)
@@ -90,17 +90,18 @@ extension LWHomeChannelView {
         LWNetWorkingTool<LWHomeChannelRequestData>.getDataFromeServiceRequest(url: LWHomeChannelDataUrl, params: dict, successBlock: {
             (jsonModel) in
             wself?.cellArray.removeAll()
-
+            
             for index in 0..<(jsonModel?.channels)!.count {
                 let info : LWHomeChannelRequestInfo = (jsonModel?.channels)![index]
                 info.itemSize = LWHomeTools.sizeChannelItem(title: (info.name)!, font:  UIFont.systemFont(ofSize: 13))
                 if info.editable == true {
-                   wself?.cellArray.append(info)
+                    wself?.cellArray.append(info)
                 }
             }
+            NotificationCenter.default.post(name: NSNotification.Name(rawValue: LWHomeChannlCompleteNotify), object: wself?.cellArray)
             wself?.collectionView.reloadData()
-            }) { (error) in
-                
+        }) { (error) in
+            
         }
     }
     
@@ -139,10 +140,10 @@ extension LWHomeChannelView: UICollectionViewDataSource,UICollectionViewDelegate
         cell.nameBtn.setTitle(dataModel.name, for: UIControlState.normal)
         return cell
     }
-
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if (selectCell != nil) {
-           selectCell?.nameBtn.isSelected = false
+            selectCell?.nameBtn.isSelected = false
         }
         selectCell = collectionView.cellForItem(at: indexPath) as? LWHomeChannelCell
         let dataModel = cellArray[indexPath.row] as LWHomeChannelRequestInfo

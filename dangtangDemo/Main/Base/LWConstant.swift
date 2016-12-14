@@ -18,7 +18,8 @@ import UIKit
 // 新特性完成的通知
 let LWNewFeatureCompleteNotify = "LWNewFeatureCompleteNotify"
 
-
+// 首页频道数据加载完成的通知
+let LWHomeChannlCompleteNotify = "LWHomeChannlCompleteNotify"
 
 // 之前系统的版本
 let LWSystemVersionKey = "LWSystemVersionKey"
@@ -50,4 +51,13 @@ let LWGlobalPlaceHolderImage = UIImage.getImageFromeBundleFile(fileName: "commen
 
 /// 存储用户信息的key
 let kLWSaveUsernfoKey = "kLWSaveUsernfoKey"
+
+
+
+/// 首页cell的比例
+let LWHomeCellWidthHeight = CGFloat(720.0 / 329.0)
+
+
+
+
 // ================================================================================================================================

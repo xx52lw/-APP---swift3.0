@@ -25,6 +25,7 @@
 		D043F87E1DD6CA9300D76760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D043F87C1DD6CA9300D76760 /* Main.storyboard */; };
 		D043F8831DD6CA9300D76760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D043F8811DD6CA9300D76760 /* LaunchScreen.storyboard */; };
 		D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07F54791DEDEADB00CDD1CA /* LWImageTool.swift */; };
+		D085B61B1DFFA26900351607 /* LWHomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D085B61A1DFFA26900351607 /* LWHomeTableView.swift */; };
 		D087BFC21DE4839400C992A9 /* LWNetWorkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFC11DE4839400C992A9 /* LWNetWorkingTool.swift */; };
 		D087BFC41DE483AB00C992A9 /* LWServiceBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFC31DE483AB00C992A9 /* LWServiceBase.swift */; };
 		D087BFC61DE483F500C992A9 /* LWViewControllerBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFC51DE483F500C992A9 /* LWViewControllerBase.swift */; };
@@ -99,6 +100,7 @@
 		D043F8821DD6CA9300D76760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D043F8841DD6CA9300D76760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		D07F54791DEDEADB00CDD1CA /* LWImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWImageTool.swift; sourceTree = "<group>"; };
+		D085B61A1DFFA26900351607 /* LWHomeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTableView.swift; sourceTree = "<group>"; };
 		D087BFC11DE4839400C992A9 /* LWNetWorkingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWNetWorkingTool.swift; sourceTree = "<group>"; };
 		D087BFC31DE483AB00C992A9 /* LWServiceBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWServiceBase.swift; sourceTree = "<group>"; };
 		D087BFC51DE483F500C992A9 /* LWViewControllerBase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWViewControllerBase.swift; sourceTree = "<group>"; };
@@ -411,6 +413,7 @@
 			children = (
 				D026506A1DFD6876009E9A78 /* LWHomeBannerCollectionViewCell.swift */,
 				D026506B1DFD6876009E9A78 /* LWHomeBannerTableView.swift */,
+				D085B61A1DFFA26900351607 /* LWHomeTableView.swift */,
 				D026506C1DFD6876009E9A78 /* LWHomeBannerView.swift */,
 				D026506D1DFD6876009E9A78 /* LWHomeChannelCell.swift */,
 				D026506E1DFD6876009E9A78 /* LWHomeChannelView.swift */,
@@ -710,6 +713,7 @@
 				D087BFF21DE4995F00C992A9 /* LWCategoryNavigationController.swift in Sources */,
 				D00FD1101DE9325300AD9607 /* LWSelectInfoViewController.swift in Sources */,
 				D0E21A7D1DFD5F6900A383FA /* LWHomeTools.swift in Sources */,
+				D085B61B1DFFA26900351607 /* LWHomeTableView.swift in Sources */,
 				D087BFF41DE4996B00C992A9 /* LWMeNavigationController.swift in Sources */,
 				D0C30C011DF0760200089CB1 /* MJRefreshBackNormalFooter.m in Sources */,
 				D087BFC41DE483AB00C992A9 /* LWServiceBase.swift in Sources */,
