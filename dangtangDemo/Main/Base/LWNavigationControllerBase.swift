@@ -39,8 +39,17 @@ class LWNavigationControllerBase: UINavigationController,UIGestureRecognizerDele
        
         if viewControllers.count > 0 {
             viewController.hidesBottomBarWhenPushed = true
-//            let bgBtnImage = UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_backward")
-//             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(bgBtnImage, target: self, action: #selector(backClick), for: UIControlEvents.touchUpInside))
+            
+            let bgBtnImage = UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_backward")
+            let btn = UIButton()
+            let title = "  \(self.title! as String)"
+            btn.setImage(bgBtnImage, for: UIControlState.normal)
+            btn.setTitle(title, for: UIControlState.normal)
+            btn.setTitleColor(UIColor.white, for: UIControlState.normal)
+            btn.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
+            btn.sizeToFit()
+            btn.addTarget(self, action: #selector(backClick), for: UIControlEvents.touchUpInside)
+            viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView:btn)
         }
         
         if (responds(to: #selector(getter: interactivePopGestureRecognizer)) && animated == true) {
@@ -53,7 +62,8 @@ class LWNavigationControllerBase: UINavigationController,UIGestureRecognizerDele
     
   /// 返回按钮点击
     func backClick(){
-        popViewController(animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lwBeignbackClick"), object: nil)
+//        popViewController(animated: true)
     }
     
     override func popToViewController(_ viewController: UIViewController, animated: Bool) -> [UIViewController]? {
@@ -83,6 +93,7 @@ class LWNavigationControllerBase: UINavigationController,UIGestureRecognizerDele
     
     func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldRequireFailureOf otherGestureRecognizer: UIGestureRecognizer) -> Bool {
         otherGestureRecognizer.require(toFail: gestureRecognizer)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "lwBeignDrugViewController"), object: nil)
         return false
     }
     

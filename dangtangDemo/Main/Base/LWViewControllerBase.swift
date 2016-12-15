@@ -17,18 +17,29 @@ class LWViewControllerBase: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         self.automaticallyAdjustsScrollViewInsets = false;
-        //        if (self.navigationController?.viewControllers.count)! > 1 {
         
-        let bgBtnImage = UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_backward")
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(bgBtnImage, target: self, action: #selector(backClick), for: UIControlEvents.touchUpInside))
+        addNotifty()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "lwBeignbackClick"), object: nil)
+        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "lwBeignDrugViewController"), object: nil)
+    }
+    
+    private func addNotifty() {
+        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "lwBeignbackClick"), object: nil)
+        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "lwBeignDrugViewController"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(backClick), name: NSNotification.Name(rawValue: "lwBeignbackClick"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(beginDrug), name: NSNotification.Name(rawValue: "lwBeignDrugViewController"), object: nil)
         
-        //        }
-        // Do any additional setup after loading the view.
     }
     
     /// 返回按钮点击
     func backClick(){
-        navigationController?.popViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
-    
+    /// 开始侧滑拖拽
+    func beginDrug()  {
+        
+    }
 }

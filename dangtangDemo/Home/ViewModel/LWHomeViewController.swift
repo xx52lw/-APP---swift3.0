@@ -71,6 +71,8 @@ extension LWHomeViewController {
         navigationController?.pushViewController(LWSearchViewController(), animated: true)
         print("rightSearchClick")
     }
+    
+    
     // MARK: 接收到频道数据加载完成的通知
     func homeChannlCompleteNotify(notify: NSNotification){
         print(notify.object)
