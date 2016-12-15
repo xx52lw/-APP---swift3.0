@@ -14,7 +14,7 @@ class LWHomeBannerTableView: UIView {
     /// 频道数据
     var bannerInfo: LWHomeChannelRequestInfo?
     /// 请求的URL
-    var URLString: String = LWHomeDataUrl
+    var URLString: String?
     /// 当前页码
     var currentPage = 0
     // banner数据数组
@@ -41,7 +41,11 @@ class LWHomeBannerTableView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(tabelView)
-        
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(homeShowChannlNotify), name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -72,15 +76,15 @@ extension LWHomeBannerTableView {
     }
     /// 加载服务器数据
     func loadServiceData() {
-        let giftData = LWGiftData()
+        let homeData = LWHomeData()
         let info = LWUserInfoModel.sharedInstance().getUserInfo()
-        giftData.gender = info.sex
-        giftData.generation = 1
-        giftData.limit = 20
-        giftData.offset = currentPage
-        let dict = LWNetWorkingTool<LWHomeData>.getDictinoary(model: giftData)
+        homeData.gender = info.sex
+        homeData.generation = 1
+        homeData.limit = 20
+        homeData.offset = currentPage
+        let dict = LWNetWorkingTool<LWHomeData>.getDictinoary(model: homeData)
         weak var wself = self
-        LWNetWorkingTool<LWHomeRequestData>.getDataFromeServiceRequest(url: URLString, params: dict , successBlock:
+        LWNetWorkingTool<LWHomeRequestData>.getDataFromeServiceRequest(url: URLString!, params: dict , successBlock:
             { jsonModel in
                 if (wself?.currentPage)! == 0 {
                     wself?.cellArray.removeAll()
@@ -105,18 +109,21 @@ extension LWHomeBannerTableView {
         }
         
     }
-    // 展示view数据
-    func showView() {
-
-        URLString = URLString + (NSString.init(format: "%ld", (bannerInfo?.id)!) as String)  + "/items?"
-        if cellArray.count <= 0 {
-            currentPage = 0
-            loadServiceData()
-        }
-    }
     // 收藏按钮点击
     func collectBtnClick(btn: UIButton) {
         print(btn)
+    }
+    // 展示视图通知
+    func homeShowChannlNotify(notify: Notification?) {
+        let info = notify?.object as! LWHomeChannelRequestInfo
+        
+        URLString = LWHomeDataUrl + (NSString.init(format: "%ld", info.id!) as String)  + "/items?"
+//        let showIndex = notify?.object as! IndexPath
+        if (info.index != self.tag || cellArray.count > 0) {
+            return
+        }
+        currentPage = 0
+        loadServiceData()
     }
 }
 // =================================================================================================================================
@@ -164,42 +171,9 @@ extension LWHomeBannerTableView : UITableViewDelegate,UITableViewDataSource {
             if cellArray.count > indexPath.row {
                 info = cellArray[indexPath.row]
             }
-            cell.selectionStyle = UITableViewCellSelectionStyle.none
-            var y : CGFloat = 0
-            var x : CGFloat = 0
-            var w : CGFloat = tableView.frame.size.width
-            var h : CGFloat = (tableView.frame.size.width / LWHomeCellWidthHeight)
-            cell.coverImageView.frame = CGRect.init(x: 5, y: 5, width: w - 10, height: h - 5)
-            LWImageTool.imageUrlAndPlaceImage(imageView: (cell.coverImageView), stringUrl: info.cover_image_url, placeholdImage: LWGlobalPlaceHolderImage)
-            cell.coverImageView.layer.cornerRadius = 5.0
-            cell.coverImageView.layer.masksToBounds = true
-            let image = UIImage.getImageFromeBundleFile(fileName: "comment", imageName: "likeCount")
-            let likeCount = (NSString.init(format: "%ld", info.likes_count!) as String)
-            let likeSize = LWUITool.sizeWithStringFont(likeCount, font: UIFont.systemFont(ofSize: 10.0), maxSize: CGSize.init(width: cell.coverImageView.frame.size.width, height: 200))
-            w = image.size.width + likeSize.width + 10
-            y = cell.coverImageView.frame.minY + 5.0
-            x = cell.coverImageView.frame.maxX - w - y
-            h = likeSize.height + 10
+            LWHomeDrawModel.drawHomeCell(tableView: tableView, cell: cell, info: info)
             cell.collectBtn.tag = indexPath.row
             cell.collectBtn.addTarget(self, action: #selector(collectBtnClick), for: UIControlEvents.touchUpInside)
-            cell.collectBtn.frame = CGRect.init(x: x, y: y, width: w, height: h)
-            cell.collectBtn.backgroundColor = UIColor.gray
-            cell.collectBtn.setTitle(likeCount, for: .normal)
-            cell.collectBtn.setImage(image, for: .normal)
-            cell.collectBtn.alpha = 0.8
-            cell.collectBtn.layer.cornerRadius = h * 0.5
-            cell.collectBtn.layer.masksToBounds = true
-            cell.collectBtn.titleLabel?.font = UIFont.systemFont(ofSize: 9)
-            
-            let title = info.title!
-            let titleSize = LWUITool.sizeWithStringFont(title, font: UIFont.systemFont(ofSize: 13.0), maxSize: CGSize.init(width: cell.coverImageView.frame.size.width, height: 200))
-            x = cell.coverImageView.frame.minX + 5.0
-            h = titleSize.height
-            w = cell.coverImageView.frame.width
-            y = cell.coverImageView.frame.maxY - h - 5.0
-            cell.titleLabel.frame = CGRect.init(x: x, y: y, width: w, height: h)
-            cell.titleLabel.text = title
-            cell.titleLabel.font = UIFont.systemFont(ofSize: 13.0)
             return cell
         }
 

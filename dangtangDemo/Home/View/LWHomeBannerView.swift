@@ -142,7 +142,7 @@ extension LWHomeBannerView: UICollectionViewDataSource,UICollectionViewDelegate,
         if index <= 0 {
             index = 0
         }
-        if (index < (cellArray.count - 1)){
+        if (index > (cellArray.count - 1)){
             index = cellArray.count - 1
         }
         pageControl.currentPage = index

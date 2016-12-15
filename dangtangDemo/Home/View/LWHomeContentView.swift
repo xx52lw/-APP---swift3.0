@@ -9,15 +9,25 @@
 import UIKit
 // =================================================================================================================================
 // MARK: - 首页频道展示视图
+protocol LWHomeContentViewDelegate : NSObjectProtocol {
+    // 滚动到某个频道
+    func homeContentView(view : LWHomeContentView, scrollToIndex: Int)
+}
+// =================================================================================================================================
+// MARK: - 首页频道展示视图
 class LWHomeContentView: UIView {
-
+    // MARK: 设置代理
+    weak var delegate : LWHomeContentViewDelegate?
     // MARK: 视图数组
      var viewArray: NSArray?
+    // MARK: 视图展示的索引
+    var showIndex = 0
     // MARK: 懒加载滚动View
     lazy var scrollView: UIScrollView = {
         let view = UIScrollView()
         view.isPagingEnabled = true
         view.bounces = false
+        view.delegate = self
         return view
     }()
 
@@ -41,7 +51,17 @@ class LWHomeContentView: UIView {
         scrollView.frame = self.bounds
     }
 
-    
+    // MARK: 滚动到相应的位置
+    func scollShowView(index: NSInteger,info: LWHomeChannelRequestInfo?) {
+        if (index >= (viewArray?.count)!) {
+            return
+        }
+        scrollView.contentOffset = CGPoint.init(x: scrollView.frame.size.width * CGFloat(index), y: 0)
+        guard let info = viewArray?[index] as? LWHomeChannelRequestInfo else {
+            return
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object:info)
+    }
     
 }
 // =================================================================================================================================
@@ -58,6 +78,7 @@ extension LWHomeContentView {
                 view.removeFromSuperview()
             }
         }
+        viewArray = viewArrays
         var showCount : CGFloat = 0
         let scrollViewWidth = scrollView.frame.size.width
         let scrollViewHeight = scrollView.frame.size.height
@@ -68,13 +89,14 @@ extension LWHomeContentView {
             if info.editable == false {
                 return
             }
+            info.index = index
             if index == 0 {
                 let bannerTableView = LWHomeBannerTableView()
                 bannerTableView.frame = CGRect.init(x: scrollViewWidth * showCount, y: 0.0, width: scrollViewWidth, height: scrollViewHeight)
                 bannerTableView.bannerInfo = info
                 bannerTableView.tag = index
-                bannerTableView.showView()
                 scrollView.addSubview(bannerTableView)
+                
             }
             else {
                 let tableView = LWHomeTableView()
@@ -85,8 +107,29 @@ extension LWHomeContentView {
             }
             showCount = showCount + 1.0
         }
+        let info = viewArrays[showIndex] as? LWHomeChannelRequestInfo
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object:info)
         scrollView.contentSize = CGSize.init(width: scrollViewWidth * showCount, height: scrollViewHeight)
+        scrollView.contentOffset = CGPoint.init(x: scrollView.frame.size.width * CGFloat(showIndex), y: 0)
         
+    }
+}
+// =================================================================================================================================
+// MARK: - 首页频道展示视图
+extension LWHomeContentView : UIScrollViewDelegate {
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        var index  = Int((scrollView.contentOffset.x + scrollView.frame.size.width * 0.5) / scrollView.frame.size.width)
+        if index <= 0 {
+            index = 0
+        }
+        if (index > ((viewArray?.count)! - 1)){
+            index = (viewArray?.count)! - 1
+        }
+        guard let info = viewArray?[index] as? LWHomeChannelRequestInfo else {
+            return
+        }
+        delegate?.homeContentView(view: self, scrollToIndex: index)
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object:info)
     }
 }
 // =================================================================================================================================

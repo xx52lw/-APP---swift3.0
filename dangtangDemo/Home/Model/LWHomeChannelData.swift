@@ -37,6 +37,7 @@ class LWHomeChannelRequestInfo: LWServiceBase {
     var editable : Bool?
     var id : Int?
     var name : String?
+    var index: Int?
     required init() {
         
     }

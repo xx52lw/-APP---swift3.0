@@ -11,7 +11,7 @@ import UIKit
 // MARK: - 首页频道选择视图代理方法
 protocol LWHomeChannelViewDelegate : NSObjectProtocol {
     // 选择某个频道
-    func homeChannelView(view : LWHomeChannelView, selectIndex: Int)
+    func homeChannelView(view : LWHomeChannelView, selectIndex: Int, info: LWHomeChannelRequestInfo?)
     // 选择选择按钮
     func homeChannelView(view : LWHomeChannelView, selectBtn: UIButton)
 }
@@ -23,6 +23,8 @@ class LWHomeChannelView: UIView {
     // 频道数据数组
     var cellArray = [LWHomeChannelRequestInfo]()
     var selectCell : LWHomeChannelCell?
+    // 选中的索引
+    var selectIndex = 0
     // 功能选择按钮
     lazy var selectBtn: UIButton = {
         let btn = UIButton()
@@ -74,6 +76,19 @@ class LWHomeChannelView: UIView {
         w = selectBtn.frame.minX
         h = self.bounds.size.height
         collectionView.frame = CGRect.init(x: x, y: y, width: w, height: h)
+    }
+    /// 选择某个频道
+    func selectedChannel(atIndex: NSInteger) {
+        if (selectCell != nil) {
+            selectCell?.nameBtn.isSelected = false
+        }
+        let indexPath = IndexPath.init(row: atIndex, section: 0)
+        guard let cell = collectionView.cellForItem(at: indexPath) as? LWHomeChannelCell else {
+            return
+        }
+        selectCell = cell
+        selectCell?.nameBtn.isSelected = true
+        collectionView.selectItem(at: indexPath, animated: false, scrollPosition: UICollectionViewScrollPosition.centeredHorizontally)
     }
 }
 // =================================================================================================================================
@@ -138,6 +153,10 @@ extension LWHomeChannelView: UICollectionViewDataSource,UICollectionViewDelegate
         let dataModel = cellArray[indexPath.row] as LWHomeChannelRequestInfo
         cell.nameBtn.frame = cell.bounds
         cell.nameBtn.setTitle(dataModel.name, for: UIControlState.normal)
+        if indexPath.item == selectIndex {
+            cell.nameBtn.isSelected = true
+            selectCell = cell
+        }
         return cell
     }
     
@@ -148,7 +167,7 @@ extension LWHomeChannelView: UICollectionViewDataSource,UICollectionViewDelegate
         selectCell = collectionView.cellForItem(at: indexPath) as? LWHomeChannelCell
         let dataModel = cellArray[indexPath.row] as LWHomeChannelRequestInfo
         selectCell?.nameBtn.isSelected = true
-        delegate?.homeChannelView(view: self, selectIndex: dataModel.id!)
+        delegate?.homeChannelView(view: self, selectIndex:indexPath.item , info: dataModel)
     }
     
 }

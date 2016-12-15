@@ -22,6 +22,7 @@ class LWHomeViewController: LWViewControllerBase {
     lazy var contenView: LWHomeContentView = {
         let view = LWHomeContentView()
         view.backgroundColor = UIColor.clear
+        view.delegate = self
         return view
     }()
     
@@ -29,6 +30,8 @@ class LWHomeViewController: LWViewControllerBase {
         super.viewDidLoad()
         setNavBar()
         // Do any additional setup after loading the view.
+        channelView.selectIndex = 0
+        contenView.showIndex = 0
         view.addSubview(channelView)
         view.addSubview(contenView)
         NotificationCenter.default.addObserver(self, selector: #selector(homeChannlCompleteNotify), name: NSNotification.Name(rawValue: LWHomeChannlCompleteNotify), object: nil)
@@ -81,15 +84,24 @@ extension LWHomeViewController {
     }
 }
 // =================================================================================================================================
-// MARK: - 首页视图
+// MARK: - 首页视图频道代理方法
 extension LWHomeViewController : LWHomeChannelViewDelegate {
     /// 选择某个频道
-    func homeChannelView(view: LWHomeChannelView, selectIndex: Int) {
-        print(selectIndex)
+    func homeChannelView(view: LWHomeChannelView, selectIndex: Int, info: LWHomeChannelRequestInfo?) {
+        contenView.scollShowView(index: selectIndex, info: info)
     }
     /// 选择选择按钮
     func homeChannelView(view: LWHomeChannelView, selectBtn: UIButton) {
         
     }
 }
+// =================================================================================================================================
+// MARK: - 首页视图内容滚动展示代理方法
+extension LWHomeViewController : LWHomeContentViewDelegate {
+    /// 滚动到某个视图
+    func homeContentView(view: LWHomeContentView, scrollToIndex: Int) {
+        channelView.selectedChannel(atIndex: scrollToIndex)
+    }
+}
+
 // =================================================================================================================================

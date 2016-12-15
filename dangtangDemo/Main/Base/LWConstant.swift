@@ -20,6 +20,8 @@ let LWNewFeatureCompleteNotify = "LWNewFeatureCompleteNotify"
 
 // 首页频道数据加载完成的通知
 let LWHomeChannlCompleteNotify = "LWHomeChannlCompleteNotify"
+// 首页展示某个频道内容
+let LWHomeShowChannlNotify = "LWHomeShowChannlNotify"
 
 // 之前系统的版本
 let LWSystemVersionKey = "LWSystemVersionKey"
