@@ -42,12 +42,14 @@ class LWNavigationControllerBase: UINavigationController,UIGestureRecognizerDele
             
             let bgBtnImage = UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_backward")
             let btn = UIButton()
-            let title = "  \(self.title! as String)"
+//            let title = "  \(self.title! as String)"
             btn.setImage(bgBtnImage, for: UIControlState.normal)
-            btn.setTitle(title, for: UIControlState.normal)
+            btn.setTitle(self.title, for: UIControlState.normal)
             btn.setTitleColor(UIColor.white, for: UIControlState.normal)
             btn.setTitleColor(UIColor.gray, for: UIControlState.highlighted)
             btn.sizeToFit()
+            btn.contentHorizontalAlignment = UIControlContentHorizontalAlignment.left
+            btn.contentEdgeInsets = UIEdgeInsetsMake(0, -10, 0, 0)  // 返回箭头向左偏移，代替系统返回箭头位置
             btn.addTarget(self, action: #selector(backClick), for: UIControlEvents.touchUpInside)
             viewController.navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView:btn)
         }

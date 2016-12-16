@@ -35,6 +35,7 @@ class LWHomeViewController: LWViewControllerBase {
         view.addSubview(channelView)
         view.addSubview(contenView)
         NotificationCenter.default.addObserver(self, selector: #selector(homeChannlCompleteNotify), name: NSNotification.Name(rawValue: LWHomeChannlCompleteNotify), object: nil)
+         NotificationCenter.default.addObserver(self, selector: #selector(homeShowProductNotify), name: NSNotification.Name(rawValue: LWHomeShowProductNotify), object: nil)
     }
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -84,6 +85,17 @@ extension LWHomeViewController {
         }
         contenView.createShowView(viewArrays: array)
     }
+    // MARK: 接收到展示某个产品详情的通知
+    func homeShowProductNotify(notify: NSNotification){
+        print(notify.object)
+        guard let info : LWHomeRequestDataInfo = notify.object as! LWHomeRequestDataInfo? else {
+            return
+        }
+        let detailVC = LWHomeProductDetailViewController()
+        detailVC.info = info
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
+
 }
 // =================================================================================================================================
 // MARK: - 首页视图频道代理方法

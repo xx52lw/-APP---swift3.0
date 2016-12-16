@@ -16,7 +16,7 @@ class LWHomeDrawModel: NSObject {
         var y : CGFloat = 0
         var x : CGFloat = 0
         var w : CGFloat = tableView.frame.size.width
-        var h : CGFloat = (tableView.frame.size.width / LWHomeCellWidthHeight)
+        var h : CGFloat = (tableView.frame.size.width * LWHomeCellHeightWidth)
         cell.coverImageView.frame = CGRect.init(x: 5, y: 5, width: w - 10, height: h - 5)
         LWImageTool.imageUrlAndPlaceImage(imageView: (cell.coverImageView), stringUrl: info.cover_image_url, placeholdImage: LWGlobalPlaceHolderImage)
         cell.coverImageView.layer.cornerRadius = 5.0

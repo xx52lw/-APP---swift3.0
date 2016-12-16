@@ -139,7 +139,7 @@ extension LWHomeTableView : UITableViewDelegate,UITableViewDataSource {
          return cellArray.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return (tableView.frame.size.width / LWHomeCellWidthHeight)
+       return (tableView.frame.size.width * LWHomeCellHeightWidth)
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -152,6 +152,13 @@ extension LWHomeTableView : UITableViewDelegate,UITableViewDataSource {
         cell.collectBtn.tag = indexPath.row
         cell.collectBtn.addTarget(self, action: #selector(collectBtnClick), for: UIControlEvents.touchUpInside)
         return cell
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var info = LWHomeRequestDataInfo()
+        if cellArray.count > indexPath.row {
+            info = cellArray[indexPath.row]
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LWHomeShowProductNotify), object: info)
     }
 }
 

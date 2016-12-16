@@ -22,6 +22,8 @@ let LWNewFeatureCompleteNotify = "LWNewFeatureCompleteNotify"
 let LWHomeChannlCompleteNotify = "LWHomeChannlCompleteNotify"
 // 首页展示某个频道内容
 let LWHomeShowChannlNotify = "LWHomeShowChannlNotify"
+// 首页展示某个产品详情内容
+let LWHomeShowProductNotify = "LWHomeShowProductNotify"
 
 // 之前系统的版本
 let LWSystemVersionKey = "LWSystemVersionKey"
@@ -57,7 +59,7 @@ let kLWSaveUsernfoKey = "kLWSaveUsernfoKey"
 
 
 /// 首页cell的比例
-let LWHomeCellWidthHeight = CGFloat(720.0 / 329.0)
+let LWHomeCellHeightWidth = CGFloat(329.0 / 720.0)
 
 
 

@@ -151,7 +151,7 @@ extension LWHomeBannerTableView : UITableViewDelegate,UITableViewDataSource {
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
       
-            return (tableView.frame.size.width / LWHomeCellWidthHeight)
+            return (tableView.frame.size.width * LWHomeCellHeightWidth)
 
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -160,7 +160,7 @@ extension LWHomeBannerTableView : UITableViewDelegate,UITableViewDataSource {
             let cell = LWHomeTableViewCell.createCell(tableView: tableView, identifier: "LWHomeTableViewCellBanner")
             cell.selectionStyle = UITableViewCellSelectionStyle.none
             let bannerView = LWHomeBannerView()
-            bannerView.frame = CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: (tableView.frame.size.width / LWHomeCellWidthHeight))
+            bannerView.frame = CGRect.init(x: 0, y: 0, width: tableView.frame.size.width, height: (tableView.frame.size.width * LWHomeCellHeightWidth))
             bannerView.loadChannelData()
             cell.contentView.addSubview(bannerView)
            return cell
@@ -180,7 +180,11 @@ extension LWHomeBannerTableView : UITableViewDelegate,UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        var info = LWHomeRequestDataInfo()
+        if cellArray.count > indexPath.row {
+            info = cellArray[indexPath.row]
+        }
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: LWHomeShowProductNotify), object: info)        
     }
     
 }

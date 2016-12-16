@@ -17,7 +17,7 @@ class LWViewControllerBase: UIViewController {
         navigationController?.navigationBar.isTranslucent = false
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         self.automaticallyAdjustsScrollViewInsets = false;
-        
+
     }
     override func viewDidAppear(_ animated: Bool) {
         addNotifty()
