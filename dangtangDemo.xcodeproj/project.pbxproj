@@ -72,6 +72,7 @@
 		D0E21A7D1DFD5F6900A383FA /* LWHomeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E21A7C1DFD5F6900A383FA /* LWHomeTools.swift */; };
 		D0F0904D1E037C3300BA512A /* LWHomeProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F0904C1E037C3300BA512A /* LWHomeProductDetailViewController.swift */; };
 		D0F090531E038CE000BA512A /* LWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F090521E038CE000BA512A /* LWWebView.swift */; };
+		D0F0905A1E03F78800BA512A /* LWHomeProductDetailBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F090591E03F78800BA512A /* LWHomeProductDetailBarView.swift */; };
 		D0FCE42D1DE5E82100E699C7 /* LWConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FCE42C1DE5E82100E699C7 /* LWConstant.swift */; };
 		D0FE110C1DE73F2A00804991 /* LWUITool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE110B1DE73F2900804991 /* LWUITool.swift */; };
 		D0FE110E1DE740C200804991 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FE110D1DE740C200804991 /* UIButton+Extension.swift */; };
@@ -171,6 +172,7 @@
 		D0E21A7C1DFD5F6900A383FA /* LWHomeTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTools.swift; sourceTree = "<group>"; };
 		D0F0904C1E037C3300BA512A /* LWHomeProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeProductDetailViewController.swift; sourceTree = "<group>"; };
 		D0F090521E038CE000BA512A /* LWWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWWebView.swift; sourceTree = "<group>"; };
+		D0F090591E03F78800BA512A /* LWHomeProductDetailBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeProductDetailBarView.swift; sourceTree = "<group>"; };
 		D0FCE42C1DE5E82100E699C7 /* LWConstant.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWConstant.swift; sourceTree = "<group>"; };
 		D0FE110B1DE73F2900804991 /* LWUITool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWUITool.swift; sourceTree = "<group>"; };
 		D0FE110D1DE740C200804991 /* UIButton+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 				D026506E1DFD6876009E9A78 /* LWHomeChannelView.swift */,
 				D026506F1DFD6876009E9A78 /* LWHomeContentView.swift */,
 				D02650701DFD6876009E9A78 /* LWHomeTableViewCell.swift */,
+				D0F090591E03F78800BA512A /* LWHomeProductDetailBarView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -716,6 +719,7 @@
 				D0C30C091DF0760200089CB1 /* UIScrollView+MJExtension.m in Sources */,
 				D026507D1DFD68A4009E9A78 /* LWHomeData.swift in Sources */,
 				D087BFCC1DE48DC300C992A9 /* LWTabBarControllerBase.swift in Sources */,
+				D0F0905A1E03F78800BA512A /* LWHomeProductDetailBarView.swift in Sources */,
 				D0C30C041DF0760200089CB1 /* MJRefreshNormalHeader.m in Sources */,
 				D087BFF61DE49DFF00C992A9 /* Bundle+Extension.swift in Sources */,
 				D0C30C021DF0760200089CB1 /* MJRefreshBackStateFooter.m in Sources */,

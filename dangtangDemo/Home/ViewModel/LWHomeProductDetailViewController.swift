@@ -38,6 +38,14 @@ class LWHomeProductDetailViewController: LWViewControllerBase {
         label.textColor = UIColor.white
         return label
     }()
+    /// 底部功能条
+    lazy var barView: LWHomeProductDetailBarView = {
+        let view = LWHomeProductDetailBarView()
+        view.backgroundColor = UIColor.white
+        view.delegate = self
+        view.dataSource = self
+        return view
+    }()
     // 信息数据
     var info = LWHomeRequestDataInfo?()
     //MARK: 重写viewDidLoad
@@ -51,20 +59,29 @@ class LWHomeProductDetailViewController: LWViewControllerBase {
         webView.scrollView.contentInset = UIEdgeInsetsMake(headerImageHeight, 0, 0, 0) // 设置网页向下
         view.addSubview(webView)
         webView.loadRequest(URLRequest.init(url: URL.init(string: (info?.content_url)!)!))
+        // 标题
         titleLabel.frame = CGRect.init(x: 0.0, y: headerImageHeight - titleHeight, width: view.frame.size.width, height: titleHeight)
         titleLabel.text = info?.title
         view.addSubview(titleLabel)
-        
+        // 底部功能条
+        view.addSubview(barView)
     }
     //MARK: 重写viewWillLayoutSubviews
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         webView.frame = view.bounds
+        barView.frame = CGRect.init(x: 0, y:view.bounds.size.height - titleHeight, width: view.bounds.size.width, height: titleHeight)
     }
 }
 // =================================================================================================================================
 // MARK: - 首页产品详情视图控制器UIScrollViewDelegate
-extension LWHomeProductDetailViewController : UIScrollViewDelegate {
+extension LWHomeProductDetailViewController : UIScrollViewDelegate,UIWebViewDelegate {
+    
+    func webViewDidFinishLoad(_ webView: UIWebView) {
+        barView.updateViews()
+    }
+    
+    
     //MARK: 滚动视图
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y
@@ -83,5 +100,25 @@ extension LWHomeProductDetailViewController : UIScrollViewDelegate {
           
         }
     }
+}
+// =================================================================================================================================
+// =================================================================================================================================
+// MARK: - 首页产品详情视图控制器功能条代理和数据源方法
+extension LWHomeProductDetailViewController : LWHomeProductDetailBarViewDelegate,LWHomeProductDetailBarViewDataSource {
+    /// 点击某项
+    internal func homeProductDetailBarView(view: LWHomeProductDetailBarView, selectIndex: Int) {
+        
+    }
+
+    
+    func homeProductDetailBarViewTitleArrays(view: LWHomeProductDetailBarView) -> NSArray {
+        return ["12","123","21"]
+    }
+    
+    func homeProductDetailBarViewImageArrays(view: LWHomeProductDetailBarView) -> NSArray {
+        let image = UIImage.getImageFromeBundleFile(fileName: "comment", imageName: "likeCount")
+        return [image,image,image,image]
+    }
+
 }
 // =================================================================================================================================
