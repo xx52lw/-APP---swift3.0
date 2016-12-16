@@ -18,17 +18,22 @@ class LWViewControllerBase: UIViewController {
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0)
         self.automaticallyAdjustsScrollViewInsets = false;
         
+    }
+    override func viewDidAppear(_ animated: Bool) {
         addNotifty()
     }
-    
+    override func viewDidDisappear(_ animated: Bool) {
+        removeNotify()
+    }
     deinit {
+       removeNotify()
+    }
+    private func removeNotify() {
         NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "lwBeignbackClick"), object: nil)
         NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "lwBeignDrugViewController"), object: nil)
     }
-    
     private func addNotifty() {
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "lwBeignbackClick"), object: nil)
-        NotificationCenter.default.removeObserver(self, name:NSNotification.Name(rawValue: "lwBeignDrugViewController"), object: nil)
+        removeNotify()
         NotificationCenter.default.addObserver(self, selector: #selector(backClick), name: NSNotification.Name(rawValue: "lwBeignbackClick"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(beginDrug), name: NSNotification.Name(rawValue: "lwBeignDrugViewController"), object: nil)
         
