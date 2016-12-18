@@ -24,6 +24,15 @@
 		D043F8791DD6CA9300D76760 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D043F8781DD6CA9300D76760 /* AppDelegate.swift */; };
 		D043F87E1DD6CA9300D76760 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D043F87C1DD6CA9300D76760 /* Main.storyboard */; };
 		D043F8831DD6CA9300D76760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D043F8811DD6CA9300D76760 /* LaunchScreen.storyboard */; };
+		D04680B01E0667580035160B /* LWCategoryListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04680AF1E0667580035160B /* LWCategoryListsViewController.swift */; };
+		D04680B61E066EC60035160B /* LWProductDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04680B51E066EC60035160B /* LWProductDetailData.swift */; };
+		D069C5A41E0676D1005CDACD /* LWCategoryCompilationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C59B1E0676D1005CDACD /* LWCategoryCompilationsView.swift */; };
+		D069C5A51E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C59C1E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift */; };
+		D069C5A61E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C59D1E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift */; };
+		D069C5AB1E06773C005CDACD /* LWCategoryCompilationsAllData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C5A71E06773C005CDACD /* LWCategoryCompilationsAllData.swift */; };
+		D069C5AC1E06773C005CDACD /* LWCategoryCompilationsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C5A81E06773C005CDACD /* LWCategoryCompilationsData.swift */; };
+		D069C5AD1E06773C005CDACD /* LWCategoryCompilationsListsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C5A91E06773C005CDACD /* LWCategoryCompilationsListsData.swift */; };
+		D069C5AE1E06773C005CDACD /* LWCategoryDrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C5AA1E06773C005CDACD /* LWCategoryDrawModel.swift */; };
 		D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07F54791DEDEADB00CDD1CA /* LWImageTool.swift */; };
 		D085B61B1DFFA26900351607 /* LWHomeTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D085B61A1DFFA26900351607 /* LWHomeTableView.swift */; };
 		D087BFC21DE4839400C992A9 /* LWNetWorkingTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D087BFC11DE4839400C992A9 /* LWNetWorkingTool.swift */; };
@@ -103,6 +112,15 @@
 		D043F87D1DD6CA9300D76760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D043F8821DD6CA9300D76760 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D043F8841DD6CA9300D76760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
+		D04680AF1E0667580035160B /* LWCategoryListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryListsViewController.swift; sourceTree = "<group>"; };
+		D04680B51E066EC60035160B /* LWProductDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWProductDetailData.swift; sourceTree = "<group>"; };
+		D069C59B1E0676D1005CDACD /* LWCategoryCompilationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsView.swift; sourceTree = "<group>"; };
+		D069C59C1E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsViewCell.swift; sourceTree = "<group>"; };
+		D069C59D1E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryListsViewCellTableViewCell.swift; sourceTree = "<group>"; };
+		D069C5A71E06773C005CDACD /* LWCategoryCompilationsAllData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsAllData.swift; sourceTree = "<group>"; };
+		D069C5A81E06773C005CDACD /* LWCategoryCompilationsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsData.swift; sourceTree = "<group>"; };
+		D069C5A91E06773C005CDACD /* LWCategoryCompilationsListsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsListsData.swift; sourceTree = "<group>"; };
+		D069C5AA1E06773C005CDACD /* LWCategoryDrawModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryDrawModel.swift; sourceTree = "<group>"; };
 		D07F54791DEDEADB00CDD1CA /* LWImageTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWImageTool.swift; sourceTree = "<group>"; };
 		D085B61A1DFFA26900351607 /* LWHomeTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTableView.swift; sourceTree = "<group>"; };
 		D087BFC11DE4839400C992A9 /* LWNetWorkingTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWNetWorkingTool.swift; sourceTree = "<group>"; };
@@ -205,6 +223,7 @@
 			children = (
 				D00FD10B1DE9298300AD9607 /* LWUserInfoModel.swift */,
 				D08E07EE1DEDC0DF00347AA9 /* LWGiftData.swift */,
+				D04680B51E066EC60035160B /* LWProductDetailData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -251,6 +270,27 @@
 				D087BFBF1DE4832400C992A9 /* System */,
 			);
 			path = dangtangDemo;
+			sourceTree = "<group>";
+		};
+		D069C5931E0676D1005CDACD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D069C5A71E06773C005CDACD /* LWCategoryCompilationsAllData.swift */,
+				D069C5A81E06773C005CDACD /* LWCategoryCompilationsData.swift */,
+				D069C5A91E06773C005CDACD /* LWCategoryCompilationsListsData.swift */,
+				D069C5AA1E06773C005CDACD /* LWCategoryDrawModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D069C59A1E0676D1005CDACD /* View */ = {
+			isa = PBXGroup;
+			children = (
+				D069C59B1E0676D1005CDACD /* LWCategoryCompilationsView.swift */,
+				D069C59C1E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift */,
+				D069C59D1E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		D087BFBD1DE4832400C992A9 /* Main */ = {
@@ -308,19 +348,12 @@
 		D087BFD11DE497C700C992A9 /* Category */ = {
 			isa = PBXGroup;
 			children = (
-				D087BFD21DE497C700C992A9 /* Model */,
+				D069C5931E0676D1005CDACD /* Model */,
+				D069C59A1E0676D1005CDACD /* View */,
 				D087BFD31DE497C700C992A9 /* Tools */,
-				D087BFD41DE497C700C992A9 /* View */,
 				D087BFD51DE497C700C992A9 /* ViewModel */,
 			);
 			path = Category;
-			sourceTree = "<group>";
-		};
-		D087BFD21DE497C700C992A9 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		D087BFD31DE497C700C992A9 /* Tools */ = {
@@ -330,17 +363,11 @@
 			path = Tools;
 			sourceTree = "<group>";
 		};
-		D087BFD41DE497C700C992A9 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
 		D087BFD51DE497C700C992A9 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
 				D087BFE91DE4986B00C992A9 /* LWCategoryViewController.swift */,
+				D04680AF1E0667580035160B /* LWCategoryListsViewController.swift */,
 				D087BFF11DE4995F00C992A9 /* LWCategoryNavigationController.swift */,
 			);
 			path = ViewModel;
@@ -724,6 +751,7 @@
 				D087BFF61DE49DFF00C992A9 /* Bundle+Extension.swift in Sources */,
 				D0C30C021DF0760200089CB1 /* MJRefreshBackStateFooter.m in Sources */,
 				D0F090531E038CE000BA512A /* LWWebView.swift in Sources */,
+				D069C5AC1E06773C005CDACD /* LWCategoryCompilationsData.swift in Sources */,
 				D087BFF21DE4995F00C992A9 /* LWCategoryNavigationController.swift in Sources */,
 				D00FD1101DE9325300AD9607 /* LWSelectInfoViewController.swift in Sources */,
 				D0E21A7D1DFD5F6900A383FA /* LWHomeTools.swift in Sources */,
@@ -749,9 +777,12 @@
 				D09B1E671E029BAE004B1AF5 /* LWHomeDrawModel.swift in Sources */,
 				D03BD9641DE88B1A006552A4 /* LWNewFeatureViewController.swift in Sources */,
 				D087BFF01DE4994900C992A9 /* LWGiftNavigationController.swift in Sources */,
+				D04680B01E0667580035160B /* LWCategoryListsViewController.swift in Sources */,
+				D069C5AB1E06773C005CDACD /* LWCategoryCompilationsAllData.swift in Sources */,
 				D0C30C001DF0760200089CB1 /* MJRefreshBackGifFooter.m in Sources */,
 				D02650741DFD6876009E9A78 /* LWHomeChannelCell.swift in Sources */,
 				D087BFC21DE4839400C992A9 /* LWNetWorkingTool.swift in Sources */,
+				D069C5AD1E06773C005CDACD /* LWCategoryCompilationsListsData.swift in Sources */,
 				D0C30BFD1DF0760200089CB1 /* MJRefreshAutoGifFooter.m in Sources */,
 				D0C30C031DF0760200089CB1 /* MJRefreshGifHeader.m in Sources */,
 				D0C30BFA1DF0760200089CB1 /* MJRefreshComponent.m in Sources */,
@@ -766,12 +797,17 @@
 				D0C30C051DF0760200089CB1 /* MJRefreshStateHeader.m in Sources */,
 				D0FE11101DE746DC00804991 /* LWSearchViewController.swift in Sources */,
 				D02650721DFD6876009E9A78 /* LWHomeBannerTableView.swift in Sources */,
+				D069C5A41E0676D1005CDACD /* LWCategoryCompilationsView.swift in Sources */,
 				D0C30C0B1DF0760200089CB1 /* UIView+MJExtension.m in Sources */,
 				D02650761DFD6876009E9A78 /* LWHomeContentView.swift in Sources */,
+				D069C5A51E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift in Sources */,
 				D02650711DFD6876009E9A78 /* LWHomeBannerCollectionViewCell.swift in Sources */,
+				D069C5A61E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift in Sources */,
 				D087BFE61DE4984500C992A9 /* LWHomeViewController.swift in Sources */,
+				D04680B61E066EC60035160B /* LWProductDetailData.swift in Sources */,
 				D087BFE81DE4985900C992A9 /* LWGiftViewController.swift in Sources */,
 				D0C1BC9D1DEB1AD000CAAA84 /* LWSelectProfessionView.swift in Sources */,
+				D069C5AE1E06773C005CDACD /* LWCategoryDrawModel.swift in Sources */,
 				D043F8791DD6CA9300D76760 /* AppDelegate.swift in Sources */,
 				D087BFCA1DE4843700C992A9 /* LWTableViewControllerBase.swift in Sources */,
 				D0C30BFF1DF0760200089CB1 /* MJRefreshAutoStateFooter.m in Sources */,

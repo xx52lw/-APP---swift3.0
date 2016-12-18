@@ -10,12 +10,14 @@ import UIKit
 // =================================================================================================================================
 // MARK: - 首页产品详情视图控制器
 class LWHomeProductDetailViewController: LWViewControllerBase {
-
+    // 请求Url
+    var url : String? = nil
     // 懒加载webview
     lazy var webView: LWWebView = {
         let view = LWWebView()
         view.backgroundColor = UIColor.clear
         view.scrollView.delegate = self
+        view.delegate = self
         return view
     }()
     // 头部视图高度
@@ -23,7 +25,7 @@ class LWHomeProductDetailViewController: LWViewControllerBase {
     // 头部背景图
     lazy var headerImageView: UIImageView = {
         let view = UIImageView()
-        view.backgroundColor = UIColor.red
+        view.backgroundColor = UIColor.clear
         view.contentMode = UIViewContentMode.scaleAspectFill
         view.clipsToBounds = true
         return view
@@ -47,24 +49,26 @@ class LWHomeProductDetailViewController: LWViewControllerBase {
         return view
     }()
     // 信息数据
-    var info = LWHomeRequestDataInfo?()
+    var info = LWProductDetailData?()
     //MARK: 重写viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         headerImageHeight = view.frame.size.width * LWHomeCellHeightWidth  // 设置高度
         headerImageView.frame = CGRect.init(x: 0.0, y: 0.0, width: view.frame.size.width, height: headerImageHeight)
-        LWImageTool.imageUrlAndPlaceImage(imageView: headerImageView, stringUrl: info?.cover_image_url, placeholdImage: LWGlobalPlaceHolderImage)
+        
         view.addSubview(headerImageView)
         webView.scrollView.contentInset = UIEdgeInsetsMake(headerImageHeight, 0, 0, 0) // 设置网页向下
         view.addSubview(webView)
-        webView.loadRequest(URLRequest.init(url: URL.init(string: (info?.content_url)!)!))
+       
         // 标题
         titleLabel.frame = CGRect.init(x: 0.0, y: headerImageHeight - titleHeight, width: view.frame.size.width, height: titleHeight)
-        titleLabel.text = info?.title
+        
         view.addSubview(titleLabel)
         // 底部功能条
         view.addSubview(barView)
+        // 加载数据
+        loadServiceData()
     }
     //MARK: 重写viewWillLayoutSubviews
     override func viewWillLayoutSubviews() {
@@ -74,14 +78,44 @@ class LWHomeProductDetailViewController: LWViewControllerBase {
     }
 }
 // =================================================================================================================================
-// MARK: - 首页产品详情视图控制器UIScrollViewDelegate
-extension LWHomeProductDetailViewController : UIScrollViewDelegate,UIWebViewDelegate {
-    
-    func webViewDidFinishLoad(_ webView: UIWebView) {
+// MARK: - 首页产品详情视图控制器功能
+extension LWHomeProductDetailViewController {
+    func loadData() {
+        LWImageTool.imageUrlAndPlaceImage(imageView: headerImageView, stringUrl: info?.cover_image_url, placeholdImage: LWGlobalPlaceHolderImage)
+         webView.loadRequest(URLRequest.init(url: URL.init(string: (info?.content_url)!)!))
+        titleLabel.text = info?.title
         barView.updateViews()
     }
+    /// 加载服务器数据
+    func loadServiceData() {
+        weak var wself = self
+        LWNetWorkingTool<LWProductDetailData>.getDataFromeServiceRequest(url: url!, successBlock: {
+            jsonModel in
+            wself?.info = jsonModel
+            wself?.loadData()
+        }) { (error) in
+        }
+    }
+
+    //MARK 收藏产品
+     func collectProduct() {
     
+    }
+   // 分享产品
+     func shareProduct() {
     
+    }
+   // 评论产品
+     func commentProduct() {
+    
+    }
+}
+// =================================================================================================================================
+
+// =================================================================================================================================
+// MARK: - 首页产品详情视图控制器UIScrollViewDelegate
+extension LWHomeProductDetailViewController : UIScrollViewDelegate,UIWebViewDelegate {
+  
     //MARK: 滚动视图
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let y = scrollView.contentOffset.y
@@ -99,25 +133,34 @@ extension LWHomeProductDetailViewController : UIScrollViewDelegate,UIWebViewDele
         else {
           
         }
+
     }
 }
-// =================================================================================================================================
 // =================================================================================================================================
 // MARK: - 首页产品详情视图控制器功能条代理和数据源方法
 extension LWHomeProductDetailViewController : LWHomeProductDetailBarViewDelegate,LWHomeProductDetailBarViewDataSource {
     /// 点击某项
     internal func homeProductDetailBarView(view: LWHomeProductDetailBarView, selectIndex: Int) {
-        
+        if selectIndex == 0 {
+            collectProduct()
+        }
+        else if selectIndex == 1 {
+            shareProduct()
+        }
+        else if selectIndex == 2 {
+            commentProduct()
+        }
     }
-
-    
+    //MARK: 内容数组
     func homeProductDetailBarViewTitleArrays(view: LWHomeProductDetailBarView) -> NSArray {
-        return ["12","123","21"]
+        return [(NSString.init(format: "%ld", (info?.likes_count)!) as String),(NSString.init(format: "%ld", (info?.shares_count)!) as String),(NSString.init(format: "%ld", (info?.comments_count)!) as String)]
     }
-    
+    //MARK: 图片就数组
     func homeProductDetailBarViewImageArrays(view: LWHomeProductDetailBarView) -> NSArray {
-        let image = UIImage.getImageFromeBundleFile(fileName: "comment", imageName: "likeCount")
-        return [image,image,image,image]
+        let like = UIImage.getImageFromeBundleFile(fileName: "comment", imageName: "details_unlike")
+        let share = UIImage.getImageFromeBundleFile(fileName: "comment", imageName: "details_share")
+        let comment = UIImage.getImageFromeBundleFile(fileName: "comment", imageName: "details_comment")
+        return [like,share,comment]
     }
 
 }

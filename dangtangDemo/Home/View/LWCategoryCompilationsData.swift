@@ -1,20 +1,17 @@
 //
-//  LWHomeData.swift
+//  LWCategoryCompilationsData.swift
 //  dangtangDemo
 //
-//  Created by liwei on 16/12/10.
+//  Created by liwei on 16/12/18.
 //  Copyright © 2016年 张星星. All rights reserved.
 //
 
 import UIKit
-/// 请求Url "http://api.dantangapp.com/v1/channels/4/items"
-let LWHomeDataUrl = "http://api.dantangapp.com/v1/channels/"
+/// 请求Url
+let LWCategoryCompilationsDataUrl = "http://api.dantangapp.com/v1/collections?"
 // ================================================================================================================================
-// MARK: 首页数据的请求参数
-class LWHomeData: LWServiceBase {
-    /// 性别
-    var gender : Int?
-    var generation : Int?
+// MARK: 单品分类专题合集数据的请求数据
+class LWCategoryCompilationsData: LWServiceBase {
     /// 每页数量
     var limit : Int = 20
     /// 页码
@@ -25,44 +22,36 @@ class LWHomeData: LWServiceBase {
     }
 
 }
+
 // ================================================================================================================================
-// MARK: 首页数据的响应数据
-class LWHomeRequestData: LWServiceBase {
+// MARK: 单品分类专题合集数据的响应数据
+class LWCategoryCompilationsRequestData: LWServiceBase {
     /// 数据数组
-    var items : [LWHomeRequestDataInfo]?
-    var paging : LWHomeRequestDataPaging?
+    var collections : [LWCategoryCompilationsRequestDataInfo]?
+    var paging : LWCategoryCompilationsRequestDataPaging?
     required init() {
         
     }
 }
 // ================================================================================================================================
 // MARK: 详细数据
-class LWHomeRequestDataInfo: LWServiceBase {
-    var content_url : String?
+class LWCategoryCompilationsRequestDataInfo: LWServiceBase {
+    var banner_image_url : String?
     var cover_image_url : String?
     var created_at : Int?
-    var description : String?
-    var editor_id : Int?
     var id : Int?
-    var liked : Bool?
-    var likes_count : Int?
-    var published_at : Int?
-    var share_msg : [String]?
-    var short_title : String?
+    var posts_count : Int?
     var status : Int?
-    var template : String?
+    var subtitle : String?
     var title : String?
-    var type : String?
     var updated_at : Int?
-    var url : String?
-    
     required init() {
         
     }
 }
 // ================================================================================================================================
 // MARK:
-class LWHomeRequestDataPaging: LWServiceBase {
+class LWCategoryCompilationsRequestDataPaging: LWServiceBase {
     
     var next_url : String?
     
@@ -71,4 +60,3 @@ class LWHomeRequestDataPaging: LWServiceBase {
     }
 }
 // ================================================================================================================================
-

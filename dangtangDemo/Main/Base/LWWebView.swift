@@ -13,6 +13,7 @@ class LWWebView: UIWebView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = UIColor.white
+        layer.isOpaque = false
     }
     
     required init?(coder aDecoder: NSCoder) {

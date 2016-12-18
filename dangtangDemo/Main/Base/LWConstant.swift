@@ -60,7 +60,8 @@ let kLWSaveUsernfoKey = "kLWSaveUsernfoKey"
 
 /// 首页cell的比例
 let LWHomeCellHeightWidth = CGFloat(329.0 / 720.0)
-
+/// 分类集合cell的比例
+let LHCategoryCellHeightWidth = CGFloat(147.0 / 300.0)
 
 
 

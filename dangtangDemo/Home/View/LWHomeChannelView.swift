@@ -105,8 +105,10 @@ extension LWHomeChannelView {
         LWNetWorkingTool<LWHomeChannelRequestData>.getDataFromeServiceRequest(url: LWHomeChannelDataUrl, params: dict, successBlock: {
             (jsonModel) in
             wself?.cellArray.removeAll()
-            
-            for index in 0..<(jsonModel?.channels)!.count {
+            guard let array = jsonModel?.channels else {
+                return
+            }
+            for index in 0..<array.count {
                 let info : LWHomeChannelRequestInfo = (jsonModel?.channels)![index]
                 info.itemSize = LWHomeTools.sizeChannelItem(title: (info.name)!, font:  UIFont.systemFont(ofSize: 13))
                 if info.editable == true {

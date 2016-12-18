@@ -11,7 +11,7 @@ import UIKit
 // MARK: - 首页视图控制器
 class LWHomeViewController: LWViewControllerBase {
     
-    // MARK: 懒加载频道选择View
+    //MARK: 懒加载频道选择View
     lazy var channelView: LWHomeChannelView = {
         let view = LWHomeChannelView()
         view.delegate = self
@@ -92,7 +92,7 @@ extension LWHomeViewController {
             return
         }
         let detailVC = LWHomeProductDetailViewController()
-        detailVC.info = info
+        detailVC.url = LWProductDetailDataUrl + (NSString.init(format: "%ld", info.id!) as String)  + "?"
         navigationController?.pushViewController(detailVC, animated: true)
     }
 

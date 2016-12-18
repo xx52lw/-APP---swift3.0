@@ -1,17 +1,17 @@
 //
-//  LWHomeData.swift
+//  LWCategoryCompilationsListsData.swift
 //  dangtangDemo
 //
-//  Created by liwei on 16/12/10.
+//  Created by liwei on 16/12/18.
 //  Copyright © 2016年 张星星. All rights reserved.
 //
 
 import UIKit
-/// 请求Url "http://api.dantangapp.com/v1/channels/4/items"
-let LWHomeDataUrl = "http://api.dantangapp.com/v1/channels/"
+/// 请求Urlhttp://api.dantangapp.com/v1/collections/4/posts?gender=1&generation=1&limit=20&offset=0
+let LWCategoryCompilationsListsDataUrl = "http://api.dantangapp.com/v1/collections/"
 // ================================================================================================================================
-// MARK: 首页数据的请求参数
-class LWHomeData: LWServiceBase {
+// MARK: 单品分类专题合集列表数据的请求数据
+class LWCategoryCompilationsListsData: LWServiceBase {
     /// 性别
     var gender : Int?
     var generation : Int?
@@ -25,19 +25,29 @@ class LWHomeData: LWServiceBase {
     }
 
 }
+
 // ================================================================================================================================
 // MARK: 首页数据的响应数据
-class LWHomeRequestData: LWServiceBase {
+class LWCategoryCompilationsListsRequestData: LWServiceBase {
     /// 数据数组
-    var items : [LWHomeRequestDataInfo]?
-    var paging : LWHomeRequestDataPaging?
+    var posts : [LWCategoryCompilationsListsRequestDataInfo]?
+    var paging : LWCategoryCompilationsListsRequestDataPaging?
+    var banner_image_url : String?
+    var cover_image_url : String?
+    var created_at : Int?
+    var id : Int?
+    var posts_count : Int?
+    var status : Int?
+    var subtitle : String?
+    var title : String?
+    var updated_at : Int?
     required init() {
         
     }
 }
 // ================================================================================================================================
 // MARK: 详细数据
-class LWHomeRequestDataInfo: LWServiceBase {
+class LWCategoryCompilationsListsRequestDataInfo: LWServiceBase {
     var content_url : String?
     var cover_image_url : String?
     var created_at : Int?
@@ -62,7 +72,7 @@ class LWHomeRequestDataInfo: LWServiceBase {
 }
 // ================================================================================================================================
 // MARK:
-class LWHomeRequestDataPaging: LWServiceBase {
+class LWCategoryCompilationsListsRequestDataPaging: LWServiceBase {
     
     var next_url : String?
     

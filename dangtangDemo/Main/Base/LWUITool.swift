@@ -13,8 +13,8 @@ class LWUITool : NSObject {
     
     
     /// 测量字符串Size
-  class  func sizeWithStringFont(_ string : String, font : UIFont, maxSize : CGSize) -> CGSize {
-       let str = string as NSString
+  class  func sizeWithStringFont(_ string : String?, font : UIFont, maxSize : CGSize) -> CGSize {
+    let str = (string ?? "") as NSString
       let option =  NSStringDrawingOptions.usesLineFragmentOrigin.rawValue | NSStringDrawingOptions.usesFontLeading.rawValue
       return str.boundingRect(with: maxSize, options: NSStringDrawingOptions(rawValue: option), attributes: [NSFontAttributeName : font], context: nil).size
     }
