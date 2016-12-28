@@ -78,6 +78,10 @@ class LWUserData: HandyJSON {
     var sex : Int = 0
     /// 职业
     var profession : Int = 0
+    /// 昵称
+    var nickname : String?
+    /// 头像
+    var headerPic : String?
     
     required init() {
         
@@ -96,4 +100,19 @@ class LWUserData: HandyJSON {
 //    }
     
 }
+// MARK: - QQ用户数据
+class LWQQUserData: HandyJSON {
+    
+    /// 用户性别 1 男 2 女
+    var gender : String?
+    /// 昵称
+    var nickname : String?
+    /// 头像
+    var figureurl_qq_2 : String?
+    
+    
+    required init() {}
+        
+}
+
 // ================================================================================================================================

@@ -11,5 +11,12 @@
 
 #import "MJRefresh.h"
 
+#import <TencentOpenAPI/TencentOAuth.h>
+#import <TencentOpenAPI/QQApiinterface.h>
+#import <TencentOpenAPI/QQApiInterfaceObject.h>
+#import <TencentOpenAPI/sdkdef.h>
+#import <TencentOpenAPI/TencentmessageObject.h>
+#import <TencentOpenAPI/TencentOAuthObject.h>
+
 #endif /* LW_Bridging_Header_h */
 ///Users/liwei/Desktop/dangtangDemo/dangtangDemo/System/LW-Bridging-Header.h
