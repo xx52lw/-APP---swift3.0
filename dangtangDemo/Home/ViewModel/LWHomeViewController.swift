@@ -76,7 +76,7 @@ extension LWHomeViewController {
     
     // MARK: 接收到频道数据加载完成的通知
     func homeChannlCompleteNotify(notify: NSNotification){
-        print(notify.object)
+        print(notify.object ?? "接收到频道数据加载完成失败")
         guard let array : NSArray = notify.object as! NSArray? else {
             return
         }
@@ -87,7 +87,7 @@ extension LWHomeViewController {
     }
     // MARK: 接收到展示某个产品详情的通知
     func homeShowProductNotify(notify: NSNotification){
-        print(notify.object)
+        print(notify.object ?? "没有刷踹数据")
         guard let info : LWHomeRequestDataInfo = notify.object as! LWHomeRequestDataInfo? else {
             return
         }

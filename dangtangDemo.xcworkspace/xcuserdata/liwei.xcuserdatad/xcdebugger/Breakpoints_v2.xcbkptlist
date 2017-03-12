@@ -27,12 +27,28 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "dangtangDemo/Me/ViewModel/LWMeViewController.swift"
-            timestampString = "504546307.144067"
+            filePath = "dangtangDemo/Main/Base/LWNavigationControllerBase.swift"
+            timestampString = "510979531.014774"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "pushViewController(_:animated:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "dangtangDemo/Me/ViewModel/LWMeViewController.swift"
+            timestampString = "510982830.086791"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
             landmarkName = "getUserInfoResponse(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -44,11 +60,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "dangtangDemo/Me/ViewModel/LWMeViewController.swift"
-            timestampString = "504621142.277862"
+            timestampString = "510982375.405793"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
             landmarkName = "getUserInfoResponse(_:)"
             landmarkType = "7">
          </BreakpointContent>

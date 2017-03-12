@@ -48,10 +48,10 @@ extension LWCategoryViewController {
     }
     //MARK: 布局子控件
     func layoutViewSubviews() {
-        var x : CGFloat = 0.0
-        var y : CGFloat = 0.0
-        var w : CGFloat = view.frame.size.width
-        var h : CGFloat = compilationView.getViewHeightWithLayoutViews(width: w)
+        let x : CGFloat = 0.0
+        let y : CGFloat = 0.0
+        let w : CGFloat = view.frame.size.width
+        let h : CGFloat = compilationView.getViewHeightWithLayoutViews(width: w)
         compilationView.frame = CGRect.init(x: x, y: y, width: w, height: h)
     }
 

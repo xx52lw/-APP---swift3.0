@@ -58,8 +58,14 @@ class LWMeViewController: LWViewControllerBase, TencentSessionDelegate,TencentLo
         }
         infoModel.nickname = nickName
         infoModel.headerPic = headerPic
+        infoModel.appID = qqAuth?.accessToken ?? ""
+        infoModel.expirationDate = qqAuth?.expirationDate.timeIntervalSinceReferenceDate
         LWUserInfoModel.sharedInstance().saveUserInfo(infoModel)
+
         print(response)
+        
+        
+        
     }
     func tencentDidNotNetWork() {
         

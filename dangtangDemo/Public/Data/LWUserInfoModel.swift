@@ -82,6 +82,16 @@ class LWUserData: HandyJSON {
     var nickname : String?
     /// 头像
     var headerPic : String?
+    /// 用户ID
+    var appID : String?
+    /// 用户授权过期日期
+    var expirationDate : TimeInterval?
+    
+    var isExpiration : Bool? {
+        get {
+            return ((expirationDate! + 8 * 3600) - Date.init(timeIntervalSinceNow: 0).timeIntervalSinceReferenceDate) > 0 ? false : true;
+        }
+    }
     
     required init() {
         
