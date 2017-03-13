@@ -13,8 +13,8 @@ class LWLoginViewController: UIViewController , TencentSessionDelegate,TencentLo
     
     var qqAuth : TencentOAuth?
     override func viewDidLoad() {
-//        setNavBar()
-        view.backgroundColor = UIColor.clear
+        setNavBar()
+        view.backgroundColor = UIColor.white
        qqAuth = TencentOAuth.init(appId: "101369721", andDelegate: self)
         
         let btn = UIButton.init()
@@ -82,12 +82,11 @@ extension LWLoginViewController {
     
     /// 设置导航条
     func setNavBar() {
-        let searchImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_search")
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(searchImage, target: self, action: #selector(dismissLoginView), for: UIControlEvents.touchUpInside))
-        navigationItem.leftBarButtonItem = nil
-//        navigationItem.title = nil
-//        // 取消按钮
-//        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action:#selector(dismissLoginView))
+//        let searchImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_search")
+//        navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(searchImage, target: self, action: #selector(dismissLoginView), for: UIControlEvents.touchUpInside))
+        navigationItem.title = "哈哈"
+        // 取消按钮
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action:#selector(dismissLoginView))
 //        // 注册按钮
 //        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action:#selector(registerClick))
 //        

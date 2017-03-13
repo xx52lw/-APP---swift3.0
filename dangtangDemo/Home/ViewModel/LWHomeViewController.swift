@@ -69,10 +69,9 @@ extension LWHomeViewController {
         
     }
     func rightSearchClick() {
-        let vc = LWLoginViewController()
-        vc.view.backgroundColor = UIColor.clear
-        vc.modalPresentationStyle = UIModalPresentationStyle.fullScreen
-        present(vc, animated: true, completion: nil)
+        let nav = LWNavigationControllerBase(rootViewController:LWLoginViewController())
+        
+        present(nav, animated: true, completion: nil)
 //        navigationController?.pushViewController(LWSearchViewController(), animated: true)
         print("rightSearchClick")
     }
