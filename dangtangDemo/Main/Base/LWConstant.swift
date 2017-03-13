@@ -18,6 +18,9 @@ import UIKit
 // 新特性完成的通知
 let LWNewFeatureCompleteNotify = "LWNewFeatureCompleteNotify"
 
+// 弹出登陆界面的通知
+let LWShowLoginViewNotify = "LWShowLoginViewNotify"
+
 // 首页频道数据加载完成的通知
 let LWHomeChannlCompleteNotify = "LWHomeChannlCompleteNotify"
 // 首页展示某个频道内容

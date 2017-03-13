@@ -9,8 +9,8 @@
 import UIKit
 // =================================================================================================================================
 // MARK: - 我的视图控制器
-class LWMeViewController: LWViewControllerBase, TencentSessionDelegate,TencentLoginDelegate {
-    var qqAuth : TencentOAuth?
+class LWMeViewController: LWViewControllerBase {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.navigationBar.isTranslucent = true
@@ -23,56 +23,11 @@ class LWMeViewController: LWViewControllerBase, TencentSessionDelegate,TencentLo
         view.addSubview(bgView)
         LWImageTool.imageUrlAndPlaceImage(imageView: bgView, stringUrl: url, placeholdImage: bgImage)
         
-        qqAuth = TencentOAuth.init(appId: "101369721", andDelegate: self)
+        
         
         // Do any additional setup after loading the view.
     }
     
-    func tencentDidLogin() {
-        let token = qqAuth?.accessToken
-        qqAuth?.getUserInfo()
-    }
-    func getUserInfoResponse(_ response: APIResponse!) {
-//        let info : NSDictionary = response.jsonResponse as NSDictionary
-        let dic = response.userData
-        var info:Dictionary = response.jsonResponse
-        for value in info {
-            print(value)
-        }
-        
-    let model = LWNetWorkingTool<LWQQUserData>.getModel(dict: info as! Dictionary<String, Any>)
-        
-        let pic = model.nickname
-        print("\(pic)")
-        
-        let sex = info["gender"] as! NSString
-        let nickName = info["nickname"] as! String
-        let headerPic = info["figureurl_qq_2"] as! String
-        
-        let infoModel = LWUserInfoModel.sharedInstance().getUserInfo()
-        if sex.isEqual(to: "男") {
-            infoModel.sex = 1
-        }
-        else {
-            infoModel.sex = 2
-        }
-        infoModel.nickname = nickName
-        infoModel.headerPic = headerPic
-        infoModel.appID = qqAuth?.accessToken ?? ""
-        infoModel.expirationDate = qqAuth?.expirationDate.timeIntervalSinceReferenceDate
-        LWUserInfoModel.sharedInstance().saveUserInfo(infoModel)
-
-        print(response)
-        
-        
-        
-    }
-    func tencentDidNotNetWork() {
-        
-    }
-    func tencentDidNotLogin(_ cancelled: Bool) {
-        
-    }
 }
 // =================================================================================================================================
 // MARK: - 我的视图
@@ -97,8 +52,8 @@ extension LWMeViewController {
     /// 设置按钮点击事件
     func rightSettingClick() {
         print("rightSettingClick")
-        let permissions = ["get_user_info","get_simple_userinfo"]
-        qqAuth?.authorize(permissions)
+//        let permissions = ["get_user_info","get_simple_userinfo"]
+//        qqAuth?.authorize(permissions)
         
     }
     

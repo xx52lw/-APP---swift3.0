@@ -89,7 +89,11 @@ class LWUserData: HandyJSON {
     
     var isExpiration : Bool? {
         get {
-            return ((expirationDate! + 8 * 3600) - Date.init(timeIntervalSinceNow: 0).timeIntervalSinceReferenceDate) > 0 ? false : true;
+            let bool = ((expirationDate! + 8 * 3600) - Date.init(timeIntervalSinceNow: 0).timeIntervalSinceReferenceDate) > 0 ? false : true
+            if bool == true {
+               NotificationCenter.default.post(name: NSNotification.Name(rawValue: LWShowLoginViewNotify), object: nil)
+            }
+            return bool;
         }
     }
     
