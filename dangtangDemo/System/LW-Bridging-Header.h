@@ -10,6 +10,8 @@
 #define LW_Bridging_Header_h
 
 #import "MJRefresh.h"
+#import "SVProgressHUD.h"
+
 
 #import <TencentOpenAPI/TencentOAuth.h>
 #import <TencentOpenAPI/QQApiinterface.h>

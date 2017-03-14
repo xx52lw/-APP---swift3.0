@@ -4,7 +4,6 @@ use_frameworks!
 target "dangtangDemo" do
 
 pod "Kingfisher"
-pod "SVProgressHUD"
 pod 'HandyJSON', '~> 1.2.1'
 pod 'Alamofire','~> 4.0'
 

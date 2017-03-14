@@ -2,20 +2,17 @@ PODS:
   - Alamofire (4.0.1)
   - HandyJSON (1.2.1)
   - Kingfisher (3.2.1)
-  - SVProgressHUD (2.0.3)
 
 DEPENDENCIES:
   - Alamofire (~> 4.0)
   - HandyJSON (~> 1.2.1)
   - Kingfisher
-  - SVProgressHUD
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
   HandyJSON: c20190bca46cc6e7fb87073df63ecbe90770a7b0
   Kingfisher: 64ef28c6d3d6f344e3ae2d7f5c9da80439505d99
-  SVProgressHUD: b0830714205bea1317ea1a2ebc71e5633af334d4
 
-PODFILE CHECKSUM: 3e37c26b7ecea0f79ad415afd42ec44e278af3e7
+PODFILE CHECKSUM: 49e74ab20e886efeba33d9e3c3e73873b29dc01b
 
 COCOAPODS: 1.0.1
