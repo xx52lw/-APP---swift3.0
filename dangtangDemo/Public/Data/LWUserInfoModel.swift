@@ -85,11 +85,12 @@ class LWUserData: HandyJSON {
     /// 用户ID
     var appID : String?
     /// 用户授权过期日期
-    var expirationDate : TimeInterval?
-    
+    var expirationDate : TimeInterval = 0
+    /// 是否过期
     var isExpiration : Bool? {
         get {
-            let bool = ((expirationDate! + 8 * 3600) - Date.init(timeIntervalSinceNow: 0).timeIntervalSinceReferenceDate) > 0 ? false : true
+          
+            let bool = ((expirationDate + 8 * 3600) - Date.init(timeIntervalSinceNow: 0).timeIntervalSinceReferenceDate) > 0 ? false : true
             if bool == true {
                NotificationCenter.default.post(name: NSNotification.Name(rawValue: LWShowLoginViewNotify), object: nil)
             }

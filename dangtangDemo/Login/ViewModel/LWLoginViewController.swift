@@ -54,7 +54,7 @@ class LWLoginViewController: UIViewController , TencentSessionDelegate,TencentLo
         infoModel.nickname = nickName
         infoModel.headerPic = headerPic
         infoModel.appID = qqAuth?.accessToken ?? ""
-        infoModel.expirationDate = qqAuth?.expirationDate.timeIntervalSinceReferenceDate
+        infoModel.expirationDate = (qqAuth?.expirationDate.timeIntervalSinceReferenceDate)!
         LWUserInfoModel.sharedInstance().saveUserInfo(infoModel)
         
         print(response)
@@ -82,11 +82,12 @@ extension LWLoginViewController {
     
     /// 设置导航条
     func setNavBar() {
-//        let searchImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_search")
-//        navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(searchImage, target: self, action: #selector(dismissLoginView), for: UIControlEvents.touchUpInside))
-        navigationItem.title = "哈哈"
         // 取消按钮
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(title: "取消", style: UIBarButtonItemStyle.plain, target: self, action:#selector(dismissLoginView))
+        let cancelBtn = UIButton()
+        cancelBtn.setTitle("取消", for: UIControlState.normal)
+        cancelBtn.sizeToFit()
+        cancelBtn.addTarget(self, action: #selector(dismissLoginView), for: UIControlEvents.touchUpInside)
+        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: cancelBtn)
 //        // 注册按钮
 //        navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "注册", style: UIBarButtonItemStyle.plain, target: self, action:#selector(registerClick))
 //        

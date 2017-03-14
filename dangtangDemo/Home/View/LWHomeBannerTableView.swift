@@ -111,7 +111,11 @@ extension LWHomeBannerTableView {
     }
     // 收藏按钮点击
     func collectBtnClick(btn: UIButton) {
-        print(btn)
+        let info = LWUserInfoModel.sharedInstance().getUserInfo()
+        if info.isExpiration == false{
+            
+            print(btn)
+        }
     }
     // 展示视图通知
     func homeShowChannlNotify(notify: Notification?) {

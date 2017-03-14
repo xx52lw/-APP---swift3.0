@@ -90,6 +90,7 @@
 		D0C30C0B1DF0760200089CB1 /* UIView+MJExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C30BF71DF0760200089CB1 /* UIView+MJExtension.m */; };
 		D0C534D21E76BE1800DC0605 /* LWLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C534D11E76BE1800DC0605 /* LWLoginViewController.swift */; };
 		D0E21A7D1DFD5F6900A383FA /* LWHomeTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E21A7C1DFD5F6900A383FA /* LWHomeTools.swift */; };
+		D0E319301E7807470025AD62 /* LWCommonGlobalTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0E3192F1E7807470025AD62 /* LWCommonGlobalTool.swift */; };
 		D0F0904D1E037C3300BA512A /* LWHomeProductDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F0904C1E037C3300BA512A /* LWHomeProductDetailViewController.swift */; };
 		D0F090531E038CE000BA512A /* LWWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F090521E038CE000BA512A /* LWWebView.swift */; };
 		D0F0905A1E03F78800BA512A /* LWHomeProductDetailBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0F090591E03F78800BA512A /* LWHomeProductDetailBarView.swift */; };
@@ -210,6 +211,7 @@
 		D0C30C0F1DF076D100089CB1 /* LW-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LW-Bridging-Header.h"; sourceTree = "<group>"; };
 		D0C534D11E76BE1800DC0605 /* LWLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWLoginViewController.swift; sourceTree = "<group>"; };
 		D0E21A7C1DFD5F6900A383FA /* LWHomeTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeTools.swift; sourceTree = "<group>"; };
+		D0E3192F1E7807470025AD62 /* LWCommonGlobalTool.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCommonGlobalTool.swift; sourceTree = "<group>"; };
 		D0F0904C1E037C3300BA512A /* LWHomeProductDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeProductDetailViewController.swift; sourceTree = "<group>"; };
 		D0F090521E038CE000BA512A /* LWWebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWWebView.swift; sourceTree = "<group>"; };
 		D0F090591E03F78800BA512A /* LWHomeProductDetailBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeProductDetailBarView.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				D0FE110D1DE740C200804991 /* UIButton+Extension.swift */,
 				D0FCE42C1DE5E82100E699C7 /* LWConstant.swift */,
 				D0FE110B1DE73F2900804991 /* LWUITool.swift */,
+				D0E3192F1E7807470025AD62 /* LWCommonGlobalTool.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -886,6 +889,7 @@
 				D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */,
 				D02650731DFD6876009E9A78 /* LWHomeBannerView.swift in Sources */,
 				D02650751DFD6876009E9A78 /* LWHomeChannelView.swift in Sources */,
+				D0E319301E7807470025AD62 /* LWCommonGlobalTool.swift in Sources */,
 				D0FE110E1DE740C200804991 /* UIButton+Extension.swift in Sources */,
 				D0C30BF91DF0760200089CB1 /* MJRefreshBackFooter.m in Sources */,
 				D0C30C051DF0760200089CB1 /* MJRefreshStateHeader.m in Sources */,

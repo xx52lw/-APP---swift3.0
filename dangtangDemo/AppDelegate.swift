@@ -70,6 +70,7 @@ extension AppDelegate {
             window?.rootViewController = UINavigationController(rootViewController : LWNewFeatureViewController())
         }
         else {
+            LWCommonGlobalTool.sharedInstance().addCommonNotify()
             window?.rootViewController = LWTabBarControllerBase()
         }
     }
