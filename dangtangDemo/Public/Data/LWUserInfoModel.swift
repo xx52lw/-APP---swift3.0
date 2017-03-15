@@ -79,9 +79,9 @@ class LWUserData: HandyJSON {
     /// 职业
     var profession : Int = 0
     /// 昵称
-    var nickname : String?
+    var nickname : String = ""
     /// 头像
-    var headerPic : String?
+    var headerPic : String = ""
     /// 用户ID
     var appID : String?
     /// 用户授权过期日期

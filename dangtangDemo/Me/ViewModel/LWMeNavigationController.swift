@@ -13,9 +13,9 @@ class LWMeNavigationController: LWNavigationControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
         // 设置背景颜色为透明色
-        let image = UIImage.drawImageWithColor(color: UIColor.clear, size: CGSize.init(width: 1, height: 1))
-        self.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
-        self.navigationBar.shadowImage = image // 去除下划线
+//        let image = UIImage.drawImageWithColor(color: UIColor.clear, size: CGSize.init(width: 1, height: 1))
+//        self.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
+//        self.navigationBar.shadowImage = image // 去除下划线
         // Do any additional setup after loading the view.
     }
 

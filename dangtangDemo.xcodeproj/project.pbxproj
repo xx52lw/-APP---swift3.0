@@ -66,6 +66,9 @@
 		D08E07F11DEDE05E00347AA9 /* LWGiftCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08E07F01DEDE05E00347AA9 /* LWGiftCollectionViewCell.swift */; };
 		D0993D101DE87F3F0061E11A /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0993D0F1DE87F3F0061E11A /* Asset.xcassets */; };
 		D09B1E671E029BAE004B1AF5 /* LWHomeDrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B1E661E029BAE004B1AF5 /* LWHomeDrawModel.swift */; };
+		D0B42F101E7964920018E73F /* LWLogint.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B42F0F1E7964920018E73F /* LWLogint.swift */; };
+		D0B42F121E79649D0018E73F /* lwmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B42F111E79649D0018E73F /* lwmodel.swift */; };
+		D0B42F141E7965A90018E73F /* LWMeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B42F131E7965A90018E73F /* LWMeHeaderView.swift */; };
 		D0C1BC9B1DEB169200CAAA84 /* LWSelectSexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1BC9A1DEB169200CAAA84 /* LWSelectSexView.swift */; };
 		D0C1BC9D1DEB1AD000CAAA84 /* LWSelectProfessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1BC9C1DEB1AD000CAAA84 /* LWSelectProfessionView.swift */; };
 		D0C30BF81DF0760200089CB1 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C30BCC1DF0760200089CB1 /* MJRefreshAutoFooter.m */; };
@@ -172,6 +175,9 @@
 		D08E07F01DEDE05E00347AA9 /* LWGiftCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWGiftCollectionViewCell.swift; sourceTree = "<group>"; };
 		D0993D0F1DE87F3F0061E11A /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		D09B1E661E029BAE004B1AF5 /* LWHomeDrawModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeDrawModel.swift; sourceTree = "<group>"; };
+		D0B42F0F1E7964920018E73F /* LWLogint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWLogint.swift; sourceTree = "<group>"; };
+		D0B42F111E79649D0018E73F /* lwmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lwmodel.swift; sourceTree = "<group>"; };
+		D0B42F131E7965A90018E73F /* LWMeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LWMeHeaderView.swift; path = dangtangDemo/Login/Model/LWMeHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		D0C1BC9A1DEB169200CAAA84 /* LWSelectSexView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWSelectSexView.swift; sourceTree = "<group>"; };
 		D0C1BC9C1DEB1AD000CAAA84 /* LWSelectProfessionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWSelectProfessionView.swift; sourceTree = "<group>"; };
 		D0C30BCB1DF0760200089CB1 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -563,6 +569,7 @@
 		D087BFE31DE497C700C992A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0B42F131E7965A90018E73F /* LWMeHeaderView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -686,6 +693,7 @@
 		D0C534CD1E76BDD300DC0605 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D0B42F111E79649D0018E73F /* lwmodel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -700,6 +708,7 @@
 		D0C534CF1E76BDD300DC0605 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D0B42F0F1E7964920018E73F /* LWLogint.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -887,6 +896,7 @@
 				D069C5AC1E06773C005CDACD /* LWCategoryCompilationsData.swift in Sources */,
 				D087BFF21DE4995F00C992A9 /* LWCategoryNavigationController.swift in Sources */,
 				D00FD1101DE9325300AD9607 /* LWSelectInfoViewController.swift in Sources */,
+				D0B42F141E7965A90018E73F /* LWMeHeaderView.swift in Sources */,
 				D0E21A7D1DFD5F6900A383FA /* LWHomeTools.swift in Sources */,
 				D085B61B1DFFA26900351607 /* LWHomeTableView.swift in Sources */,
 				D087BFF41DE4996B00C992A9 /* LWMeNavigationController.swift in Sources */,
@@ -912,11 +922,13 @@
 				D087BFF01DE4994900C992A9 /* LWGiftNavigationController.swift in Sources */,
 				D04680B01E0667580035160B /* LWCategoryListsViewController.swift in Sources */,
 				D069C5AB1E06773C005CDACD /* LWCategoryCompilationsAllData.swift in Sources */,
+				D0B42F101E7964920018E73F /* LWLogint.swift in Sources */,
 				D0C30C001DF0760200089CB1 /* MJRefreshBackGifFooter.m in Sources */,
 				D02650741DFD6876009E9A78 /* LWHomeChannelCell.swift in Sources */,
 				D087BFC21DE4839400C992A9 /* LWNetWorkingTool.swift in Sources */,
 				D069C5AD1E06773C005CDACD /* LWCategoryCompilationsListsData.swift in Sources */,
 				D0C30BFD1DF0760200089CB1 /* MJRefreshAutoGifFooter.m in Sources */,
+				D0B42F121E79649D0018E73F /* lwmodel.swift in Sources */,
 				D0C534D21E76BE1800DC0605 /* LWLoginViewController.swift in Sources */,
 				D0C30C031DF0760200089CB1 /* MJRefreshGifHeader.m in Sources */,
 				D0C30BFA1DF0760200089CB1 /* MJRefreshComponent.m in Sources */,

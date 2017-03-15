@@ -12,7 +12,11 @@ class LWImageTool: NSObject {
 
     ///  对Kingfisher的再次封装
     class func imageUrlAndPlaceImage(imageView : UIImageView , stringUrl : String? , placeholdImage : UIImage) {
-        let url = URL(string : stringUrl!)
+        var urlString = stringUrl
+        if  urlString == nil {
+            urlString = ""
+        }
+        let url = URL(string : urlString!)
         imageView.kf.setImage(with: url, placeholder: placeholdImage, options: nil, progressBlock: nil, completionHandler: nil)
     }
     

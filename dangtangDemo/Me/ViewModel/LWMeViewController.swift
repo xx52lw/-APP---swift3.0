@@ -11,21 +11,50 @@ import UIKit
 // MARK: - 我的视图控制器
 class LWMeViewController: LWViewControllerBase {
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    // 懒加载头像视图
+    lazy var headerView : LWMeHeaderView = {
+       let view = LWMeHeaderView()
+        view.backgroundColor = UIColor.clear
+        let infoModel = LWUserInfoModel.sharedInstance().getUserInfo()
+        let placeholdImage = UIImage.getImageFromeBundleFile(fileName: "me", imageName: "Me_AvatarPlaceholder")
+        LWImageTool.imageUrlAndPlaceImage(imageView: view.headerImageView, stringUrl: infoModel.headerPic, placeholdImage: placeholdImage)
+        view.nickLabel.text = infoModel.nickname.characters.count > 0 ? infoModel.nickname : "登录"
+        return view
+    }()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let image = UIImage.drawImageWithColor(color: UIColor.clear, size: CGSize.init(width: 1, height: 1))
+        navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
+        navigationController?.navigationBar.shadowImage = image // 去除下划线
         navigationController?.navigationBar.isTranslucent = true
         self.edgesForExtendedLayout = UIRectEdge.all
-        setNavBar()
-        let bgImage = UIImage.getImageFromeBundleFile(fileName: "me", imageName: "Me_ProfileBackground")
-        let bgView = UIImageView.init(image: bgImage)
-        let url =  "http://7fvaoh.com3.z0.glb.qiniucdn.com/image/150817/cq0a0htx5_w.jpg-w720"
-        //        bgView.kf.setImage(with: url, placeholder: bgImage, options: nil, progressBlock: nil, completionHandler: nil)
-        view.addSubview(bgView)
-        LWImageTool.imageUrlAndPlaceImage(imageView: bgView, stringUrl: url, placeholdImage: bgImage)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+               setNavBar()
         
-        
+        view.addSubview(self.headerView)
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        messageImageClick()
+    }
+    
+    override func viewWillLayoutSubviews() {
+         super.viewWillLayoutSubviews()
+        let headerBgImage = UIImage.getImageFromeBundleFile(fileName: "me", imageName: "Me_ProfileBackground")
+        var w = max(headerBgImage.size.width, 1)
+        var h = max(headerBgImage.size.height, 1)
+        if  w > self.view.frame.size.width {
+            w = self.view.frame.size.width
+            h =  (h / headerBgImage.size.width) * w
+        }
+        self.headerView.frame = CGRect.init(x: 0, y: 0, width: w, height: h)
+        self.headerView.bgImageView.image = headerBgImage
     }
     
 }
@@ -47,6 +76,9 @@ extension LWMeViewController {
     /// 消息按钮点击事件
     func messageImageClick() {
         print("messageImageClick")
+        let detailVC = LWHomeProductDetailViewController()
+        detailVC.url = "http://"
+        navigationController?.pushViewController(detailVC, animated: true)
         
     }
     /// 设置按钮点击事件
