@@ -19,10 +19,17 @@ class LWViewControllerBase: UIViewController {
         self.automaticallyAdjustsScrollViewInsets = false;
 
     }
+    // 默认是灰色，这里设置成白色
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: true)
     }
+    
     override func viewDidAppear(_ animated: Bool) {
         addNotifty()
     }
