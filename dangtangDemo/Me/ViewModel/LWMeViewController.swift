@@ -23,11 +23,8 @@ class LWMeViewController: LWViewControllerBase {
     }()
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        let image = UIImage.drawImageWithColor(color: UIColor.clear, size: CGSize.init(width: 1, height: 1))
-        navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = image // 去除下划线
-        navigationController?.navigationBar.isTranslucent = true
-        self.edgesForExtendedLayout = UIRectEdge.all
+        // 此处坑了我好久，侧滑返回bug.解决问题的关键，我们之前一直使用self.navigationController.navigationBarHidden或者self.navigationController.navigationBar.hidden来隐藏navigatiuonbar，这样直接更改属性的方式是不带动画的，而且滑动时的转场动画页不为我们处理好，才导致了问出的出现
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidLoad() {
