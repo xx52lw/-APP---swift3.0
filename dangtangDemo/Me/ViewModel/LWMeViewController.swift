@@ -34,7 +34,11 @@ class LWMeViewController: LWViewControllerBase {
                setNavBar()
         
         view.addSubview(self.headerView)
-        
+        let path = Bundle.main.path(forResource: "SettingConfiguration", ofType: ".plist")
+        let settingArray = NSArray.init(contentsOfFile: path!)
+        let data = NSData.init(contentsOfFile: path!)
+//        let json = JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions)
+//        LWNetWorkingTool<LWUserData>.getModel(dict: dict)
         // Do any additional setup after loading the view.
     }
     
