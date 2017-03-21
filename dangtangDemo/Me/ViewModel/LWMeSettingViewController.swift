@@ -8,36 +8,38 @@
 
 import UIKit
 
-class LWMeSettingViewController: UITableViewController {
+class LWMeSettingViewController: LWViewControllerBase {
 
+    // 懒加载设置数组
+    lazy var settingArray : NSArray = {
+        let path = Bundle.main.path(forResource: "SettingConfiguration", ofType: ".plist")
+        let settingArray = NSArray.init(contentsOfFile: path!)
+        return settingArray!
+    }()
+    // 懒加载列表数组
+    lazy var tableView : UITableView = {
+        let view = UITableView.init(frame: CGRect.init(), style: UITableViewStyle.grouped)
+//        view.delegate = self
+//        view.dataSource = self
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-    
         
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
+//    // MARK: - Table view data source
+//
+//    override func numberOfSections(in tableView: UITableView) -> Int {
+//        // #warning Incomplete implementation, return the number of sections
+//        return
+//    }
+//
+//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+//        // #warning Incomplete implementation, return the number of rows
+//        return 0
+//    }
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
