@@ -11,15 +11,25 @@ import UIKit
 // MARK: - 首页视图控制器
 class LWLoginViewController: LWViewControllerBase {
     
+    lazy var loginView: LWLoginView = {
+        let view = LWLoginView()
+//        view.delegate = self
+        return view
+    }()
+    
     var qqAuth : TencentOAuth?
     override func viewDidLoad() {
+        super.viewDidLoad()
         setNavBar()
-        view.backgroundColor = UIColor.white
        qqAuth = TencentOAuth.init(appId: "101369721", andDelegate: self)
+        view.addSubview(self.loginView)
         
     }
     
-    
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.loginView.frame = self.view.bounds
+    }
        /// 设置按钮点击事件
     func rightSettingClick() {
         print("rightSettingClick")
@@ -34,6 +44,7 @@ extension LWLoginViewController {
     
     /// 设置导航条
     func setNavBar() {
+        navigationItem.title = "登录"
         // 取消按钮
         let cancelBtn = UIButton()
         cancelBtn.setTitle("取消", for: UIControlState.normal)
