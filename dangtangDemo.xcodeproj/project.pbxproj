@@ -37,8 +37,6 @@
 		D04680B01E0667580035160B /* LWCategoryListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04680AF1E0667580035160B /* LWCategoryListsViewController.swift */; };
 		D04680B61E066EC60035160B /* LWProductDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04680B51E066EC60035160B /* LWProductDetailData.swift */; };
 		D05EAB7B1E7AC18F0048F810 /* LWMeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05EAB7A1E7AC18F0048F810 /* LWMeSettingViewController.swift */; };
-		D05EAB7D1E7AC2830048F810 /* SettingConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = D05EAB7C1E7AC2830048F810 /* SettingConfiguration.plist */; };
-		D05EAB7F1E7AC4240048F810 /* LWSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05EAB7E1E7AC4240048F810 /* LWSettingModel.swift */; };
 		D069C5A41E0676D1005CDACD /* LWCategoryCompilationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C59B1E0676D1005CDACD /* LWCategoryCompilationsView.swift */; };
 		D069C5A51E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C59C1E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift */; };
 		D069C5A61E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C59D1E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift */; };
@@ -150,8 +148,6 @@
 		D04680AF1E0667580035160B /* LWCategoryListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryListsViewController.swift; sourceTree = "<group>"; };
 		D04680B51E066EC60035160B /* LWProductDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWProductDetailData.swift; sourceTree = "<group>"; };
 		D05EAB7A1E7AC18F0048F810 /* LWMeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeSettingViewController.swift; sourceTree = "<group>"; };
-		D05EAB7C1E7AC2830048F810 /* SettingConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SettingConfiguration.plist; sourceTree = "<group>"; };
-		D05EAB7E1E7AC4240048F810 /* LWSettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWSettingModel.swift; sourceTree = "<group>"; };
 		D069C59B1E0676D1005CDACD /* LWCategoryCompilationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsView.swift; sourceTree = "<group>"; };
 		D069C59C1E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsViewCell.swift; sourceTree = "<group>"; };
 		D069C59D1E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryListsViewCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -590,8 +586,6 @@
 				D087BFEB1DE4987900C992A9 /* LWMeViewController.swift */,
 				D087BFF31DE4996B00C992A9 /* LWMeNavigationController.swift */,
 				D05EAB7A1E7AC18F0048F810 /* LWMeSettingViewController.swift */,
-				D05EAB7C1E7AC2830048F810 /* SettingConfiguration.plist */,
-				D05EAB7E1E7AC4240048F810 /* LWSettingModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -833,7 +827,6 @@
 			files = (
 				D0F5C6061E782F16006C999A /* SVProgressHUD.bundle in Resources */,
 				D03600581E12B4E80032719C /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
-				D05EAB7D1E7AC2830048F810 /* SettingConfiguration.plist in Resources */,
 				D043F8831DD6CA9300D76760 /* LaunchScreen.storyboard in Resources */,
 				D043F87E1DD6CA9300D76760 /* Main.storyboard in Resources */,
 				D0993D101DE87F3F0061E11A /* Asset.xcassets in Resources */,
@@ -950,7 +943,6 @@
 				D03BD9661DE88BEA006552A4 /* LWNewFeatureCollectionViewCell.swift in Sources */,
 				D00FD10C1DE9298300AD9607 /* LWUserInfoModel.swift in Sources */,
 				D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */,
-				D05EAB7F1E7AC4240048F810 /* LWSettingModel.swift in Sources */,
 				D02650731DFD6876009E9A78 /* LWHomeBannerView.swift in Sources */,
 				D02650751DFD6876009E9A78 /* LWHomeChannelView.swift in Sources */,
 				D0E319301E7807470025AD62 /* LWCommonGlobalTool.swift in Sources */,

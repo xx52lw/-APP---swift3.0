@@ -45,14 +45,17 @@ class LWHomeTableView: UIView {
         addSubview(tabelView)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(homeShowChannlNotify), name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
-    }
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshView), name:NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     //MARK: 重写deinit
     deinit {
-         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
+
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
 
     //MARK: 重写layoutSubviews
     override func layoutSubviews() {
@@ -65,6 +68,10 @@ class LWHomeTableView: UIView {
 // =================================================================================================================================
 // MARK: - 工具方法
 extension LWHomeTableView {
+    // 旋转刷新视图
+    func refreshView() {
+        tabelView.reloadData()
+    }
     /// 加载最新数据
     func loadNew() {
         refreshHeader.beginRefreshing()
@@ -114,6 +121,11 @@ extension LWHomeTableView {
     
     // 收藏按钮点击
     func collectBtnClick(btn: UIButton) {
+        let info = LWUserInfoModel.sharedInstance().getUserInfo()
+        if info.isExpiration == false{
+            
+            print(btn)
+        }
         print(btn)
     }
     

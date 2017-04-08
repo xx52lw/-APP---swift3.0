@@ -23,20 +23,20 @@ class LWHomeDrawModel: NSObject {
         cell.coverImageView.layer.masksToBounds = true
         let image = UIImage.getImageFromeBundleFile(fileName: "comment", imageName: "likeCount")
         let likeCount = (NSString.init(format: "%ld", info.likes_count!) as String)
-        let likeSize = LWUITool.sizeWithStringFont(likeCount, font: UIFont.boldSystemFont(ofSize: 10.0), maxSize: CGSize.init(width: cell.coverImageView.frame.size.width, height: 200))
-        w = image.size.width + likeSize.width + 10
+        let likeSize = LWUITool.sizeWithStringFont(likeCount, font: UIFont.boldSystemFont(ofSize: 12.0), maxSize: CGSize.init(width: cell.coverImageView.frame.size.width, height: 200))
+        w = image.size.width + likeSize.width + 20
         y = cell.coverImageView.frame.minY + 5.0
         x = cell.coverImageView.frame.maxX - w - y
-        h = likeSize.height + 10
+        h = likeSize.height + 20
         
         cell.collectBtn.frame = CGRect.init(x: x, y: y, width: w, height: h)
         cell.collectBtn.backgroundColor = UIColor.gray
         cell.collectBtn.setTitle(likeCount, for: .normal)
         cell.collectBtn.setImage(image, for: .normal)
-        cell.collectBtn.alpha = 0.8
+        cell.collectBtn.alpha = 0.5
         cell.collectBtn.layer.cornerRadius = h * 0.5
         cell.collectBtn.layer.masksToBounds = true
-        cell.collectBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 10)
+        cell.collectBtn.titleLabel?.font = UIFont.boldSystemFont(ofSize: 12)
         
         let title = info.title!
         let titleSize = LWUITool.sizeWithStringFont(title, font: UIFont.systemFont(ofSize: 17.0), maxSize: CGSize.init(width: cell.coverImageView.frame.size.width, height: 200))

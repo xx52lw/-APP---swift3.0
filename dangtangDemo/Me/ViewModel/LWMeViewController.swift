@@ -12,6 +12,18 @@ import HandyJSON
 // MARK: - 我的视图控制器
 class LWMeViewController: LWViewControllerBase {
     
+    // 消息按钮
+    lazy var messageBtn: UIButton = {
+        let messageImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_message")
+        let messageBtn = UIButton.creatButtonWithNormalBgImage(messageImage, target: self, action: #selector(messageImageClick), for: UIControlEvents.touchUpInside)
+        return messageBtn
+    }()
+    // 设置按钮
+    lazy var settingBtn: UIButton = {
+        let settingImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_setting")
+        let settingBtn = UIButton.creatButtonWithNormalBgImage(settingImage, target: self, action: #selector(rightSettingClick), for: UIControlEvents.touchUpInside)
+        return settingBtn
+    }()
     // 懒加载头像视图
     lazy var headerView : LWMeHeaderView = {
        let view = LWMeHeaderView()
@@ -32,11 +44,11 @@ class LWMeViewController: LWViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-               setNavBar()
         
         view.addSubview(self.headerView)
         
         
+        setNavBar()
         // Do any additional setup after loading the view.
     }
     
@@ -45,12 +57,22 @@ class LWMeViewController: LWViewControllerBase {
         let headerBgImage = UIImage.getImageFromeBundleFile(fileName: "me", imageName: "Me_ProfileBackground")
         var w = max(headerBgImage.size.width, 1)
         var h = max(headerBgImage.size.height, 1)
-        if  w > self.view.frame.size.width {
+        if  w > self.view.frame.size.width || w < self.view.frame.size.width{
             w = self.view.frame.size.width
             h =  (h / headerBgImage.size.width) * w
         }
         self.headerView.frame = CGRect.init(x: 0, y: 0, width: w, height: h)
         self.headerView.bgImageView.image = headerBgImage
+        var x : CGFloat = 10.0
+        var y : CGFloat = 30.0
+        w = messageBtn.frame.size.width
+        h = messageBtn.frame.size.height
+        messageBtn.frame = CGRect.init(x: x, y: y, width: w, height: h)
+        
+        w = settingBtn.frame.size.width
+        h = settingBtn.frame.size.height
+        x = view.frame.size.width - w - 10.0
+        settingBtn.frame = CGRect.init(x: x, y: y, width: w, height: h)
     }
     
 }
@@ -60,18 +82,9 @@ extension LWMeViewController {
     
     /// 设置导航条
     func setNavBar() {
-        navigationItem.title = nil
-        let image = UIImage.drawImageWithColor(color: UIColor.clear, size: CGSize.init(width: 1, height: 1))
-        navigationController?.navigationBar.setBackgroundImage(image, for: UIBarMetrics.default)
-        navigationController?.navigationBar.shadowImage = image // 去除下划线
-        navigationController?.navigationBar.isTranslucent = true
-        self.edgesForExtendedLayout = UIRectEdge.all
-        // 消息按钮
-        let messageImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_message")
-        navigationItem.leftBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(messageImage, target: self, action: #selector(messageImageClick), for: UIControlEvents.touchUpInside))
-        // 设置按钮
-        let settingImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_setting")
-        navigationItem.rightBarButtonItem = UIBarButtonItem.init(customView: UIButton.creatButtonWithNormalBgImage(settingImage, target: self, action: #selector(rightSettingClick), for: UIControlEvents.touchUpInside))
+    
+        view.addSubview(self.messageBtn)
+       view.addSubview(self.settingBtn)
         
     }
     /// 消息按钮点击事件
@@ -82,9 +95,9 @@ extension LWMeViewController {
     /// 设置按钮点击事件
     func rightSettingClick() {
         print("rightSettingClick")
-//        let permissions = ["get_user_info","get_simple_userinfo"]
-//        qqAuth?.authorize(permissions)
-        
+        let vc = LWMeSettingViewController()
+        vc.hidesBottomBarWhenPushed = true
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     

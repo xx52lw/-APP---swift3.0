@@ -13,11 +13,13 @@ class LWLoginViewController: LWViewControllerBase {
     
     lazy var loginView: LWLoginView = {
         let view = LWLoginView()
-//        view.delegate = self
+        view.delegate = self
         return view
     }()
-    
-    var qqAuth : TencentOAuth?
+    lazy var qqAuth : TencentOAuth = {
+      let auth = TencentOAuth.init(appId: "101369721", andDelegate: self)
+        return auth!
+    }()
     override func viewDidLoad() {
         super.viewDidLoad()
         setNavBar()
@@ -33,8 +35,6 @@ class LWLoginViewController: LWViewControllerBase {
        /// 设置按钮点击事件
     func rightSettingClick() {
         print("rightSettingClick")
-        let permissions = ["get_user_info","get_simple_userinfo"]
-        qqAuth?.authorize(permissions)
         
     }
 }
@@ -66,18 +66,56 @@ extension LWLoginViewController {
     // MARK:  设置按钮点击事件
     func registerClick() {
         print("rightSettingClick")
-        let permissions = ["get_user_info","get_simple_userinfo"]
-        qqAuth?.authorize(permissions)
+       
         
     }
-    
+    //// MARK: 登录操作
+    func login() {
+        // 此处应该有个请求把数据返回给自己后台
+        
+        SVProgressHUD.show(withStatus: "正在加载...")
+        weak var wself = self
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
+
+            SVProgressHUD.dismiss()
+            wself?.dismissLoginView()
+        }
+
+    }
     //// MARK: QQ授权
     func qqAuthorizeLogin() {
+        let permissions = ["get_user_info","get_simple_userinfo"]
+        qqAuth.authorize(permissions)
+    }
+    //// MARK: 微信授权
+    func wechatAuthorizeLogin() {
         
+    }
+    //// MARK: weibo授权
+    func weiboAuthorizeLogin() {
+
     }
     
     
+}
+
+// =================================================================================================================================
+// MARK: - 登录界面代理方法
+extension LWLoginViewController : LWLoginViewDelegate {
     
+    /// 选择选择按钮
+    func loginView(view: LWLoginView, index: btnType) {
+        switch index {
+        case btnType.loginBtn: login()
+        case btnType.qq:
+            qqAuthorizeLogin()
+            print("qq")
+        case btnType.wechat: wechatAuthorizeLogin()
+        case btnType.weibo : weiboAuthorizeLogin()
+        default: break
+            
+        }
+    }
 }
 // =================================================================================================================================
 extension LWLoginViewController :  TencentSessionDelegate,TencentLoginDelegate {
@@ -85,7 +123,7 @@ extension LWLoginViewController :  TencentSessionDelegate,TencentLoginDelegate {
     // 检测登录状态
     func tencentDidLogin() {
 //        let token = qqAuth?.accessToken
-        qqAuth?.getUserInfo()
+        qqAuth.getUserInfo()
     }
     // 用户信息回调
     func getUserInfoResponse(_ response: APIResponse!) {
@@ -105,19 +143,11 @@ extension LWLoginViewController :  TencentSessionDelegate,TencentLoginDelegate {
         }
         infoModel.nickname = nickName
         infoModel.headerPic = headerPic
-        infoModel.appID = qqAuth?.accessToken ?? ""
-        infoModel.expirationDate = (qqAuth?.expirationDate.timeIntervalSinceReferenceDate)!
+        infoModel.appID = qqAuth.accessToken ?? ""
+        infoModel.expirationDate = (qqAuth.expirationDate.timeIntervalSinceReferenceDate)
         
-        // 此处应该有个请求把数据返回给自己后台
-        
-        SVProgressHUD.show(withStatus: "正在加载...")
-       
-        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 3.0) {
-        
-            SVProgressHUD.dismiss()
-            
-        }
-        
+        // 模拟登录
+        login()
         LWUserInfoModel.sharedInstance().saveUserInfo(infoModel)
         
         print(response)

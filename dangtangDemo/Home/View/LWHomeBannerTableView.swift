@@ -43,9 +43,10 @@ class LWHomeBannerTableView: UIView {
         addSubview(tabelView)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(homeShowChannlNotify), name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshView), name:NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
     deinit {
-        NotificationCenter.default.removeObserver(self, name: NSNotification.Name(rawValue: LWHomeShowChannlNotify), object: nil)
+        NotificationCenter.default.removeObserver(self)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -62,6 +63,10 @@ class LWHomeBannerTableView: UIView {
 // =================================================================================================================================
 // MARK: - 工具方法
 extension LWHomeBannerTableView {
+    // 旋转刷新视图
+    func refreshView() {
+        tabelView.reloadData()
+    }
     /// 加载最新数据
     func loadNew() {
         refreshHeader.beginRefreshing()

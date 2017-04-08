@@ -52,8 +52,6 @@ class LWHomeViewController: LWViewControllerBase {
         y = channelView.frame.maxY
         h = view.frame.size.height - y
         contenView.frame = CGRect.init(x: x, y: y, width: w, height: h)
-        
-        
     }
     
 }

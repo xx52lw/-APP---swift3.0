@@ -57,6 +57,10 @@ class LWHomeChannelView: UIView {
         addSubview(collectionView)
         addSubview(selectBtn)
         loadChannelData()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshView), name:NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
+    }
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -94,6 +98,11 @@ class LWHomeChannelView: UIView {
 // =================================================================================================================================
 // MARK: - 首页频道选择视图
 extension LWHomeChannelView {
+    // 旋转刷新视图
+    func refreshView() {
+        collectionView.reloadData()
+    }
+    
     // 加载频道数据
     func loadChannelData() {
         let channel = LWHomeChannelData()

@@ -26,7 +26,7 @@ class LWMeSettingViewController: LWViewControllerBase {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.title = "设置"
     }
 
 //    // MARK: - Table view data source
