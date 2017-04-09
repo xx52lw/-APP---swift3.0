@@ -7,93 +7,110 @@
 //
 
 import UIKit
-
+// =================================================================================================================================
+// MARK: - 我的设置视图控制器
 class LWMeSettingViewController: LWViewControllerBase {
 
-    // 懒加载设置数组
+    //MARK: 懒加载设置数组
     lazy var settingArray : NSArray = {
-        let path = Bundle.main.path(forResource: "SettingConfiguration", ofType: ".plist")
-        let settingArray = NSArray.init(contentsOfFile: path!)
-        return settingArray!
+        guard let path = Bundle.main.path(forResource: "settingConfiguration", ofType: ".plist") else {
+            return NSArray.init()
+        }
+        let settingArray = NSArray.init(contentsOfFile: path)
+        guard let arrayCount = settingArray?.count else {
+            return NSArray.init()
+        }
+        let tempArray = NSMutableArray.init()
+        for index in 0..<arrayCount {
+            let group = LWMeSettingGroupModel()
+            let groupArray = settingArray?.object(at: index) as! NSArray
+            let groupTemp = NSMutableArray.init()
+            if groupArray.count > 0 {
+                for item in 0..<groupArray.count {
+                    let dic = groupArray.object(at: item) as! Dictionary<String, Any>
+                    let cellModel = LWMeSettingGroupCellModel()
+                    cellModel.iconImage = dic["iconImage"] as! String
+                    cellModel.isHiddenSwitch = (dic["isHiddenSwitch"] != nil)
+                    cellModel.isHiddenRightTip = (dic["isHiddenRightTip"] != nil)
+                    cellModel.isHiddenArrow = (dic["isHiddenArrow"] != nil)
+                    cellModel.leftTitle = dic["leftTitle"] as! String
+                    cellModel.rightTitle = dic["rightTitle"] as! String
+                    groupTemp.add(cellModel)
+                }
+            }
+            group.cells = groupTemp  as NSArray
+            tempArray.add(group);
+        }
+        return tempArray
     }()
-    // 懒加载列表数组
+
+    //MARK: 懒加载列表数组
     lazy var tableView : UITableView = {
         let view = UITableView.init(frame: CGRect.init(), style: UITableViewStyle.grouped)
-//        view.delegate = self
-//        view.dataSource = self
+        view.separatorStyle = UITableViewCellSeparatorStyle.none
+        view.delegate = self
+        view.dataSource = self
         return view
     }()
+    //MARK: 懒加载绘制模型
+    lazy var drawModel: LWMeSettingDrawModel = {
+        let model = LWMeSettingDrawModel()
+        return model
+    }()
     
+    //MARK: 重写viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "设置"
+        self.view .addSubview(self.tableView)
     }
-
-//    // MARK: - Table view data source
-//
-//    override func numberOfSections(in tableView: UITableView) -> Int {
-//        // #warning Incomplete implementation, return the number of sections
-//        return
-//    }
-//
-//    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        // #warning Incomplete implementation, return the number of rows
-//        return 0
-//    }
-
-    /*
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    //MARK: 重写viewWillLayoutSubviews
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        self.tableView.frame = self.view.frame
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
+// =================================================================================================================================
+// MARK: - 我的设置视图控制器
+extension LWMeSettingViewController : UITableViewDelegate,UITableViewDataSource {
+    //MARK: 返回组数
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return self.settingArray.count
+    }
+    //MARK: 每组cell数量
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if section < self.settingArray.count {
+            guard let groupModel : LWMeSettingGroupModel = self.settingArray.object(at: section) as? LWMeSettingGroupModel else {
+                return 0
+            }
+          return (groupModel.cells.count)
+        }
+        return 0
+    }
+    //MARK: 每组的高度
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 44
+    }
+    //MARK: cell 的样式
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let ID = "LWMeSettingTableViewCell"
+        var cell = tableView.dequeueReusableCell(withIdentifier: ID)
+        if cell == nil {
+            cell = LWMeSettingTableViewCell.init(style: UITableViewCellStyle.default, reuseIdentifier: ID)
+            cell?.backgroundColor = UIColor.white
+        }
+        guard let groupModel : LWMeSettingGroupModel = self.settingArray.object(at: indexPath.section) as? LWMeSettingGroupModel else {
+            return UITableViewCell()
+        }
+        if (groupModel.cells.count) > indexPath.item {
+            let arrayModel = groupModel.cells
+            self.drawModel.drawSetting(tableView: tableView, cell: cell as! LWMeSettingTableViewCell, model: arrayModel.object(at: indexPath.item) as! LWMeSettingGroupCellModel)
+            return cell!
+        }
+        else {
+            return UITableViewCell()
+        }
+    }
+}
+// =================================================================================================================================
+

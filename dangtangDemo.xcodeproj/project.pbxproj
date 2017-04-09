@@ -19,6 +19,10 @@
 		D026507B1DFD68A4009E9A78 /* LWHomeBannerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02650781DFD68A4009E9A78 /* LWHomeBannerData.swift */; };
 		D026507C1DFD68A4009E9A78 /* LWHomeChannelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02650791DFD68A4009E9A78 /* LWHomeChannelData.swift */; };
 		D026507D1DFD68A4009E9A78 /* LWHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026507A1DFD68A4009E9A78 /* LWHomeData.swift */; };
+		D02C31241E9A22E90080033F /* LWMeSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C31231E9A22E90080033F /* LWMeSettingModel.swift */; };
+		D02C31261E9A24F80080033F /* settingConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = D02C31251E9A24F80080033F /* settingConfiguration.plist */; };
+		D02C312D1E9A33680080033F /* LWMeSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C312C1E9A33680080033F /* LWMeSettingTableViewCell.swift */; };
+		D02C312F1E9A37E00080033F /* LWMeSettingDrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C312E1E9A37E00080033F /* LWMeSettingDrawModel.swift */; };
 		D03600571E12B4E80032719C /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03600551E12B4E80032719C /* TencentOpenAPI.framework */; };
 		D03600581E12B4E80032719C /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D03600561E12B4E80032719C /* TencentOpenApi_IOS_Bundle.bundle */; };
 		D036005C1E12B8EF0032719C /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D036005B1E12B8EF0032719C /* Security.framework */; };
@@ -128,6 +132,10 @@
 		D02650781DFD68A4009E9A78 /* LWHomeBannerData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeBannerData.swift; sourceTree = "<group>"; };
 		D02650791DFD68A4009E9A78 /* LWHomeChannelData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeChannelData.swift; sourceTree = "<group>"; };
 		D026507A1DFD68A4009E9A78 /* LWHomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeData.swift; sourceTree = "<group>"; };
+		D02C31231E9A22E90080033F /* LWMeSettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeSettingModel.swift; sourceTree = "<group>"; };
+		D02C31251E9A24F80080033F /* settingConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settingConfiguration.plist; sourceTree = "<group>"; };
+		D02C312C1E9A33680080033F /* LWMeSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LWMeSettingTableViewCell.swift; path = dangtangDemo/Me/Model/LWMeSettingTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		D02C312E1E9A37E00080033F /* LWMeSettingDrawModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeSettingDrawModel.swift; sourceTree = "<group>"; };
 		D03600551E12B4E80032719C /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		D03600561E12B4E80032719C /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
 		D036005B1E12B8EF0032719C /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -559,7 +567,10 @@
 		D087BFE11DE497C700C992A9 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D02C31251E9A24F80080033F /* settingConfiguration.plist */,
 				D0D7D0DC1E8299C800FD6BCD /* LWMeDataModel.swift */,
+				D02C31231E9A22E90080033F /* LWMeSettingModel.swift */,
+				D02C312E1E9A37E00080033F /* LWMeSettingDrawModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -576,6 +587,7 @@
 			isa = PBXGroup;
 			children = (
 				D0B42F131E7965A90018E73F /* LWMeHeaderView.swift */,
+				D02C312C1E9A33680080033F /* LWMeSettingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -827,6 +839,7 @@
 			files = (
 				D0F5C6061E782F16006C999A /* SVProgressHUD.bundle in Resources */,
 				D03600581E12B4E80032719C /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				D02C31261E9A24F80080033F /* settingConfiguration.plist in Resources */,
 				D043F8831DD6CA9300D76760 /* LaunchScreen.storyboard in Resources */,
 				D043F87E1DD6CA9300D76760 /* Main.storyboard in Resources */,
 				D0993D101DE87F3F0061E11A /* Asset.xcassets in Resources */,
@@ -924,7 +937,9 @@
 				D0FCE42D1DE5E82100E699C7 /* LWConstant.swift in Sources */,
 				D087BFEA1DE4986B00C992A9 /* LWCategoryViewController.swift in Sources */,
 				D0F0904D1E037C3300BA512A /* LWHomeProductDetailViewController.swift in Sources */,
+				D02C312F1E9A37E00080033F /* LWMeSettingDrawModel.swift in Sources */,
 				D09B1E671E029BAE004B1AF5 /* LWHomeDrawModel.swift in Sources */,
+				D02C31241E9A22E90080033F /* LWMeSettingModel.swift in Sources */,
 				D03BD9641DE88B1A006552A4 /* LWNewFeatureViewController.swift in Sources */,
 				D087BFF01DE4994900C992A9 /* LWGiftNavigationController.swift in Sources */,
 				D04680B01E0667580035160B /* LWCategoryListsViewController.swift in Sources */,
@@ -944,6 +959,7 @@
 				D00FD10C1DE9298300AD9607 /* LWUserInfoModel.swift in Sources */,
 				D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */,
 				D02650731DFD6876009E9A78 /* LWHomeBannerView.swift in Sources */,
+				D02C312D1E9A33680080033F /* LWMeSettingTableViewCell.swift in Sources */,
 				D02650751DFD6876009E9A78 /* LWHomeChannelView.swift in Sources */,
 				D0E319301E7807470025AD62 /* LWCommonGlobalTool.swift in Sources */,
 				D0FE110E1DE740C200804991 /* UIButton+Extension.swift in Sources */,
