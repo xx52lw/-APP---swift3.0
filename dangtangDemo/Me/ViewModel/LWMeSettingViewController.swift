@@ -30,9 +30,9 @@ class LWMeSettingViewController: LWViewControllerBase {
                     let dic = groupArray.object(at: item) as! Dictionary<String, Any>
                     let cellModel = LWMeSettingGroupCellModel()
                     cellModel.iconImage = dic["iconImage"] as! String
-                    cellModel.isHiddenSwitch = (dic["isHiddenSwitch"] != nil)
-                    cellModel.isHiddenRightTip = (dic["isHiddenRightTip"] != nil)
-                    cellModel.isHiddenArrow = (dic["isHiddenArrow"] != nil)
+                    cellModel.isHiddenSwitch = dic["isHiddenSwitch"] as? Bool
+                    cellModel.isHiddenRightTip = dic["isHiddenRightTip"] as? Bool
+                    cellModel.isHiddenArrow = dic["isHiddenArrow"] as? Bool
                     cellModel.leftTitle = dic["leftTitle"] as! String
                     cellModel.rightTitle = dic["rightTitle"] as! String
                     groupTemp.add(cellModel)
@@ -62,7 +62,42 @@ class LWMeSettingViewController: LWViewControllerBase {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "设置"
-        self.view .addSubview(self.tableView)
+        for index in 0..<self.settingArray.count {
+            if index == 0 {
+                let group = self.settingArray.object(at: index) as! LWMeSettingGroupModel
+                for i in 0..<group.cells.count {
+                 let cellModel = group.cells.object(at: i) as! LWMeSettingGroupCellModel
+                    if i == 1 {
+                        cellModel.rightTitle = "☺️"
+                    }
+                }
+            }
+            if index == 1 {
+                let group = self.settingArray.object(at: index) as! LWMeSettingGroupModel
+                for i in 0..<group.cells.count {
+                    let cellModel = group.cells.object(at: i) as! LWMeSettingGroupCellModel
+                    if i == 0 {
+                        let info = LWUserInfoModel.sharedInstance().getUserInfo()
+                        var rightString = ""
+                        if info.sex == 1 {
+                            rightString = "男孩"
+                        }
+                        else {
+                           rightString = "女孩"
+                        }
+                        rightString = rightString + " "
+                        if info.profession == 1 {
+                            rightString = rightString + "牛逼"
+                        }
+                        else if info.profession == 2  {
+                            rightString = rightString + "学生"
+                        }
+                        cellModel.rightTitle = rightString
+                    }
+                }
+            }
+        }
+        self.view.addSubview(self.tableView)
     }
     //MARK: 重写viewWillLayoutSubviews
     override func viewWillLayoutSubviews() {

@@ -21,7 +21,6 @@
 		D026507D1DFD68A4009E9A78 /* LWHomeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D026507A1DFD68A4009E9A78 /* LWHomeData.swift */; };
 		D02C31241E9A22E90080033F /* LWMeSettingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C31231E9A22E90080033F /* LWMeSettingModel.swift */; };
 		D02C31261E9A24F80080033F /* settingConfiguration.plist in Resources */ = {isa = PBXBuildFile; fileRef = D02C31251E9A24F80080033F /* settingConfiguration.plist */; };
-		D02C312D1E9A33680080033F /* LWMeSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C312C1E9A33680080033F /* LWMeSettingTableViewCell.swift */; };
 		D02C312F1E9A37E00080033F /* LWMeSettingDrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D02C312E1E9A37E00080033F /* LWMeSettingDrawModel.swift */; };
 		D03600571E12B4E80032719C /* TencentOpenAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03600551E12B4E80032719C /* TencentOpenAPI.framework */; };
 		D03600581E12B4E80032719C /* TencentOpenApi_IOS_Bundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = D03600561E12B4E80032719C /* TencentOpenApi_IOS_Bundle.bundle */; };
@@ -40,6 +39,8 @@
 		D043F8831DD6CA9300D76760 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D043F8811DD6CA9300D76760 /* LaunchScreen.storyboard */; };
 		D04680B01E0667580035160B /* LWCategoryListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04680AF1E0667580035160B /* LWCategoryListsViewController.swift */; };
 		D04680B61E066EC60035160B /* LWProductDetailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04680B51E066EC60035160B /* LWProductDetailData.swift */; };
+		D04FE6051EA7894000FF3899 /* LWMeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04FE6031EA7894000FF3899 /* LWMeHeaderView.swift */; };
+		D04FE6061EA7894000FF3899 /* LWMeSettingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D04FE6041EA7894000FF3899 /* LWMeSettingTableViewCell.swift */; };
 		D05EAB7B1E7AC18F0048F810 /* LWMeSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D05EAB7A1E7AC18F0048F810 /* LWMeSettingViewController.swift */; };
 		D069C5A41E0676D1005CDACD /* LWCategoryCompilationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C59B1E0676D1005CDACD /* LWCategoryCompilationsView.swift */; };
 		D069C5A51E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D069C59C1E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift */; };
@@ -72,7 +73,6 @@
 		D0993D101DE87F3F0061E11A /* Asset.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0993D0F1DE87F3F0061E11A /* Asset.xcassets */; };
 		D09B1E671E029BAE004B1AF5 /* LWHomeDrawModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D09B1E661E029BAE004B1AF5 /* LWHomeDrawModel.swift */; };
 		D0B42F121E79649D0018E73F /* lwmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B42F111E79649D0018E73F /* lwmodel.swift */; };
-		D0B42F141E7965A90018E73F /* LWMeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0B42F131E7965A90018E73F /* LWMeHeaderView.swift */; };
 		D0C1BC9B1DEB169200CAAA84 /* LWSelectSexView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1BC9A1DEB169200CAAA84 /* LWSelectSexView.swift */; };
 		D0C1BC9D1DEB1AD000CAAA84 /* LWSelectProfessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1BC9C1DEB1AD000CAAA84 /* LWSelectProfessionView.swift */; };
 		D0C30BF81DF0760200089CB1 /* MJRefreshAutoFooter.m in Sources */ = {isa = PBXBuildFile; fileRef = D0C30BCC1DF0760200089CB1 /* MJRefreshAutoFooter.m */; };
@@ -134,7 +134,6 @@
 		D026507A1DFD68A4009E9A78 /* LWHomeData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeData.swift; sourceTree = "<group>"; };
 		D02C31231E9A22E90080033F /* LWMeSettingModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeSettingModel.swift; sourceTree = "<group>"; };
 		D02C31251E9A24F80080033F /* settingConfiguration.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = settingConfiguration.plist; sourceTree = "<group>"; };
-		D02C312C1E9A33680080033F /* LWMeSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LWMeSettingTableViewCell.swift; path = dangtangDemo/Me/Model/LWMeSettingTableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		D02C312E1E9A37E00080033F /* LWMeSettingDrawModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeSettingDrawModel.swift; sourceTree = "<group>"; };
 		D03600551E12B4E80032719C /* TencentOpenAPI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = TencentOpenAPI.framework; sourceTree = "<group>"; };
 		D03600561E12B4E80032719C /* TencentOpenApi_IOS_Bundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = TencentOpenApi_IOS_Bundle.bundle; sourceTree = "<group>"; };
@@ -155,6 +154,8 @@
 		D043F8841DD6CA9300D76760 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		D04680AF1E0667580035160B /* LWCategoryListsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryListsViewController.swift; sourceTree = "<group>"; };
 		D04680B51E066EC60035160B /* LWProductDetailData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWProductDetailData.swift; sourceTree = "<group>"; };
+		D04FE6031EA7894000FF3899 /* LWMeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeHeaderView.swift; sourceTree = "<group>"; };
+		D04FE6041EA7894000FF3899 /* LWMeSettingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeSettingTableViewCell.swift; sourceTree = "<group>"; };
 		D05EAB7A1E7AC18F0048F810 /* LWMeSettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWMeSettingViewController.swift; sourceTree = "<group>"; };
 		D069C59B1E0676D1005CDACD /* LWCategoryCompilationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsView.swift; sourceTree = "<group>"; };
 		D069C59C1E0676D1005CDACD /* LWCategoryCompilationsViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWCategoryCompilationsViewCell.swift; sourceTree = "<group>"; };
@@ -187,7 +188,6 @@
 		D0993D0F1DE87F3F0061E11A /* Asset.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Asset.xcassets; sourceTree = "<group>"; };
 		D09B1E661E029BAE004B1AF5 /* LWHomeDrawModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWHomeDrawModel.swift; sourceTree = "<group>"; };
 		D0B42F111E79649D0018E73F /* lwmodel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = lwmodel.swift; sourceTree = "<group>"; };
-		D0B42F131E7965A90018E73F /* LWMeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LWMeHeaderView.swift; path = dangtangDemo/Login/Model/LWMeHeaderView.swift; sourceTree = SOURCE_ROOT; };
 		D0C1BC9A1DEB169200CAAA84 /* LWSelectSexView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWSelectSexView.swift; sourceTree = "<group>"; };
 		D0C1BC9C1DEB1AD000CAAA84 /* LWSelectProfessionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LWSelectProfessionView.swift; sourceTree = "<group>"; };
 		D0C30BCB1DF0760200089CB1 /* MJRefreshAutoFooter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MJRefreshAutoFooter.h; sourceTree = "<group>"; };
@@ -586,8 +586,8 @@
 		D087BFE31DE497C700C992A9 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				D0B42F131E7965A90018E73F /* LWMeHeaderView.swift */,
-				D02C312C1E9A33680080033F /* LWMeSettingTableViewCell.swift */,
+				D04FE6031EA7894000FF3899 /* LWMeHeaderView.swift */,
+				D04FE6041EA7894000FF3899 /* LWMeSettingTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -911,11 +911,11 @@
 				D087BFF61DE49DFF00C992A9 /* Bundle+Extension.swift in Sources */,
 				D0C30C021DF0760200089CB1 /* MJRefreshBackStateFooter.m in Sources */,
 				D0F090531E038CE000BA512A /* LWWebView.swift in Sources */,
+				D04FE6051EA7894000FF3899 /* LWMeHeaderView.swift in Sources */,
 				D0D7D0DD1E8299C800FD6BCD /* LWMeDataModel.swift in Sources */,
 				D069C5AC1E06773C005CDACD /* LWCategoryCompilationsData.swift in Sources */,
 				D087BFF21DE4995F00C992A9 /* LWCategoryNavigationController.swift in Sources */,
 				D00FD1101DE9325300AD9607 /* LWSelectInfoViewController.swift in Sources */,
-				D0B42F141E7965A90018E73F /* LWMeHeaderView.swift in Sources */,
 				D0E21A7D1DFD5F6900A383FA /* LWHomeTools.swift in Sources */,
 				D085B61B1DFFA26900351607 /* LWHomeTableView.swift in Sources */,
 				D087BFF41DE4996B00C992A9 /* LWMeNavigationController.swift in Sources */,
@@ -959,7 +959,6 @@
 				D00FD10C1DE9298300AD9607 /* LWUserInfoModel.swift in Sources */,
 				D07F547A1DEDEADB00CDD1CA /* LWImageTool.swift in Sources */,
 				D02650731DFD6876009E9A78 /* LWHomeBannerView.swift in Sources */,
-				D02C312D1E9A33680080033F /* LWMeSettingTableViewCell.swift in Sources */,
 				D02650751DFD6876009E9A78 /* LWHomeChannelView.swift in Sources */,
 				D0E319301E7807470025AD62 /* LWCommonGlobalTool.swift in Sources */,
 				D0FE110E1DE740C200804991 /* UIButton+Extension.swift in Sources */,
@@ -977,6 +976,7 @@
 				D069C5A61E0676D1005CDACD /* LWCategoryListsViewCellTableViewCell.swift in Sources */,
 				D087BFE61DE4984500C992A9 /* LWHomeViewController.swift in Sources */,
 				D04680B61E066EC60035160B /* LWProductDetailData.swift in Sources */,
+				D04FE6061EA7894000FF3899 /* LWMeSettingTableViewCell.swift in Sources */,
 				D087BFE81DE4985900C992A9 /* LWGiftViewController.swift in Sources */,
 				D0D7D0DB1E82999800FD6BCD /* LWLoginView.swift in Sources */,
 				D0C1BC9D1DEB1AD000CAAA84 /* LWSelectProfessionView.swift in Sources */,

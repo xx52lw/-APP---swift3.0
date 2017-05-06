@@ -15,7 +15,7 @@ class LWMeSettingDrawModel: NSObject {
     func drawSetting(tableView: UITableView, cell: LWMeSettingTableViewCell, model: LWMeSettingGroupCellModel){
         
         let margin = CGFloat(10.0)
-        let maxWidth = cell.frame.size.width
+        let maxWidth = tableView.frame.size.width
         let maxHeight = CGFloat(44.0)
         var x = margin
         var y = margin
@@ -49,14 +49,31 @@ class LWMeSettingDrawModel: NSObject {
         }
         // 左侧标签
         x = cell.leftImageView.frame.maxX + margin
-        w = maxWidth * 0.5 - x
-        let leftLabelSize = LWUITool.sizeWithStringFont(model.leftTitle, font: font, maxSize: CGSize.init(width: w, height: maxHeight))
-        w = leftLabelSize.width
-        h = leftLabelSize.height
-        y = (maxHeight - h) * 0.5
-        cell.leftLabel.frame = CGRect.init(x: x, y: y, width: w, height: h)
         cell.leftLabel.font = font
         cell.leftLabel.text = model.leftTitle
+        cell.leftLabel.textColor = UIColor.black
+        cell.leftLabel.sizeToFit()
+        w = cell.leftLabel.frame.size.width
+        h = cell.leftLabel.frame.size.height
+        y = (maxHeight - h) / 2
+        cell.leftLabel.frame = CGRect.init(x: x, y: y, width: w, height: h)
+        
+        
+        // 右侧标签
+        if model.rightTitle.characters.count > 0 {
+            cell.rightLabel.font = font
+            cell.rightLabel.text = model.rightTitle
+            cell.rightLabel.textColor = UIColor.gray
+            cell.rightLabel.sizeToFit()
+            w = cell.rightLabel.frame.size.width
+            x = cell.arrowImageView.frame.minX - w - 10.0
+            h = cell.rightLabel.frame.size.height
+            y = (maxHeight - h) / 2
+            cell.rightLabel.frame = CGRect.init(x: x, y: y, width: w, height: h)
+        }
+        else {
+            cell.rightLabel.frame = CGRect.zero
+        }
         // 下划线
         x = cell.leftImageView.frame.maxX
         h = 1.0

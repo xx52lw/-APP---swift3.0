@@ -14,13 +14,15 @@ class LWMeViewController: LWViewControllerBase {
     
     // 消息按钮
     lazy var messageBtn: UIButton = {
-        let messageImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_message")
+        var messageImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_message")
+        messageImage = UIImage.marginImage(size: CGSize.init(width: messageImage.size.width + 20, height: messageImage.size.height + 10), origionImage: messageImage)!
         let messageBtn = UIButton.creatButtonWithNormalBgImage(messageImage, target: self, action: #selector(messageImageClick), for: UIControlEvents.touchUpInside)
         return messageBtn
     }()
     // 设置按钮
     lazy var settingBtn: UIButton = {
-        let settingImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_setting")
+        var settingImage =  UIImage.getImageFromeBundleFile(fileName: "nav", imageName: "Nav_setting")
+        settingImage = UIImage.marginImage(size: CGSize.init(width: settingImage.size.width + 20, height: settingImage.size.height + 10), origionImage: settingImage)!
         let settingBtn = UIButton.creatButtonWithNormalBgImage(settingImage, target: self, action: #selector(rightSettingClick), for: UIControlEvents.touchUpInside)
         return settingBtn
     }()
@@ -64,7 +66,7 @@ class LWMeViewController: LWViewControllerBase {
         self.headerView.frame = CGRect.init(x: 0, y: 0, width: w, height: h)
         self.headerView.bgImageView.image = headerBgImage
         var x : CGFloat = 10.0
-        var y : CGFloat = 30.0
+        var y : CGFloat = 20.0
         w = messageBtn.frame.size.width
         h = messageBtn.frame.size.height
         messageBtn.frame = CGRect.init(x: x, y: y, width: w, height: h)

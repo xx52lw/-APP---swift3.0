@@ -61,5 +61,47 @@ extension UIImage {
         return colorImage
         
     }
-    
+   /// 
+    class func marginImage(size: CGSize , origionImage : UIImage) -> UIImage? {
+        UIGraphicsBeginImageContext(size)
+        let imageRect = CGRect.init(x: (size.width - origionImage.size.width) / 2, y: (size.height - origionImage.size.height) / 2, width: origionImage.size.width, height: origionImage.size.height)
+        origionImage.draw(in: imageRect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
+
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

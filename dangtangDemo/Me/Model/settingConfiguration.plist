@@ -103,7 +103,7 @@
 			<key>isHiddenRightTip</key>
 			<true/>
 			<key>isHiddenArrow</key>
-			<true/>
+			<false/>
 		</dict>
 	</array>
 </array>

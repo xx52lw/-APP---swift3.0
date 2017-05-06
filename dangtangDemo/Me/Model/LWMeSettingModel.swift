@@ -14,9 +14,9 @@ class LWMeSettingGroupCellModel: LWServiceBase {
     var iconImage : String = ""
     var leftTitle : String = ""
     var rightTitle : String = ""
-    var isHiddenSwitch   : Bool = false
-    var isHiddenRightTip : Bool = false
-    var isHiddenArrow : Bool = false
+    var isHiddenSwitch   : Bool?
+    var isHiddenRightTip : Bool?
+    var isHiddenArrow : Bool?
     required init() {
         
     }
